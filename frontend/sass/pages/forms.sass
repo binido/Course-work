@@ -1,0 +1,59 @@
+.form-container
+    width: 100svw
+    height: 100svh
+
+    form
+        @include center
+        @include main-font
+        display: flex
+        flex-direction: column
+        gap: 15px
+
+        h1
+            font-size: 36px
+            font-weight: 700
+            color: $dark-blue
+            align-self: center
+
+        input
+            width: 350px
+            height: 50px
+            border: none
+            outline: none
+            font-size: 16px
+            font-weight: 600
+            color: #111
+            padding: 0 15px
+
+            &[type='text'], &[type='password']
+                background-color: $light-grey
+
+            &[type='submit']
+                background-color: $dark-blue
+                color: #fff
+                transition: all 0.3s ease-in-out
+                cursor: pointer
+                
+
+                &:hover
+                    background-color: #ffffff
+                    color: $dark-blue
+                    border: 2px solid $dark-blue
+
+
+        .link-block
+            a
+                color: $dark-blue
+                font-size: 12px
+                text-decoration: none
+
+                &:first-child
+                    color: $link-color
+
+                &.right
+                    float: right
+
+                &:hover
+                    text-decoration: underline
+
+

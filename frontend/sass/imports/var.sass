@@ -2,7 +2,9 @@ $main-font: "Montserrat", sans-serif
 $logo-font: "Joti One", serif
 $main-color: #333
 $dark-grey: #14151B
+$light-grey: #E6E6E6
 $dark-blue: #232A34
+$link-color: #3763FF
 
 @mixin shadow
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4)
@@ -21,3 +23,16 @@ $dark-blue: #232A34
 @mixin container
     @include flex-center
     margin: 0 10px
+
+@mixin center
+    position: fixed
+    inset: 0
+    width: fit-content
+    height: fit-content
+    margin: auto
+
+@mixin border-radius($radius)
+    border-radius: $radius
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    -khtml-border-radius: $radius

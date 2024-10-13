@@ -184,6 +184,9 @@ table {
   padding: 20px 30px;
   background-color: #232A34;
   border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
   gap: 20px;
 }
 .footer-container .footer .footer-block h2, .footer-container .footer .footer-block h3 {
@@ -213,11 +216,11 @@ table {
 .footer-container .footer .footer-block ul li a {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  transition: all 0.3s ease-out;
+  transition: color 0.1s ease-out;
 }
 .footer-container .footer .footer-block ul li a:hover {
   text-decoration: underline;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .main-container {
@@ -250,8 +253,11 @@ table {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-  color: #14151B;
   border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  color: #14151B;
   padding: 10px;
   display: flex;
 }
@@ -274,6 +280,67 @@ table {
   flex-direction: column;
   gap: 5px;
   font-size: 14px;
+}
+
+.form-container {
+  width: 100svw;
+  height: 100svh;
+}
+.form-container form {
+  position: fixed;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-container form h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #232A34;
+  align-self: center;
+}
+.form-container form input {
+  width: 350px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  padding: 0 15px;
+}
+.form-container form input[type=text], .form-container form input[type=password] {
+  background-color: #E6E6E6;
+}
+.form-container form input[type=submit] {
+  background-color: #232A34;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.form-container form input[type=submit]:hover {
+  background-color: #ffffff;
+  color: #232A34;
+  border: 2px solid #232A34;
+}
+.form-container form .link-block a {
+  color: #232A34;
+  font-size: 12px;
+  text-decoration: none;
+}
+.form-container form .link-block a:first-child {
+  color: #3763FF;
+}
+.form-container form .link-block a.right {
+  float: right;
+}
+.form-container form .link-block a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

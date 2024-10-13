@@ -10,7 +10,7 @@
         margin: 20px 0
         padding: 20px 30px
         background-color: $dark-blue
-        border-radius: 5px
+        @include border-radius(5px)
         gap: 20px
 
         .footer-block
@@ -44,8 +44,8 @@
                     a
                         color: rgba(255, 255, 255, 0.5)
                         text-decoration: none
-                        transition: all 0.3s ease-out
+                        transition: color 0.1s ease-out
 
                         &:hover
                             text-decoration: underline
-                            color: rgba(255, 255, 255, 0.7)
+                            color: rgba(255, 255, 255, 0.9)
