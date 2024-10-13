@@ -1,8 +1,5 @@
 .header-container
-    margin: 0 10px
-    display: flex
-    align-items: center
-    justify-content: center
+    @include container
     border-bottom: 1px solid rgba(0, 0, 0, 0.5)
 
     .header
@@ -22,9 +19,8 @@
             text-decoration: none
 
         .header-menu
-            font-family: $main-font
+            @include main-font
             font-size: 16px
-            font-weight: 500
             display: flex
             gap: 25px
             justify-content: space-between

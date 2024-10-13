@@ -1,0 +1,51 @@
+.footer-container
+    @include container
+    margin-top: 60px
+
+    .footer
+        @include main-font
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        width: 1000px
+        margin: 20px 0
+        padding: 20px 30px
+        background-color: $dark-blue
+        border-radius: 5px
+        gap: 20px
+
+        .footer-block
+
+            h2, h3
+                color: #fff
+                font-weight: 700
+
+            h2
+                font-size: 32px
+
+            h3
+                font-size: 24px
+
+            ul
+                margin-top: 16px
+                color: rgba(255, 255, 255, 0.5)
+                display: flex
+                flex-direction: column
+                gap: 5px
+
+                &.mt-20
+                    li:last-child
+                        margin-top: 10px
+
+                &.grid-ul
+                    display: grid
+                    grid-template-columns: repeat(2, 1fr)
+
+                li
+                    a
+                        color: rgba(255, 255, 255, 0.5)
+                        text-decoration: none
+                        transition: all 0.3s ease-out
+
+                        &:hover
+                            text-decoration: underline
+                            color: rgba(255, 255, 255, 0.7)
