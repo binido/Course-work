@@ -343,4 +343,69 @@ table {
   text-decoration: underline;
 }
 
+.contact-block {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  align-items: center;
+  gap: 45px;
+}
+.contact-block .contact {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -khtml-border-radius: 5px 0 0 5px;
+  width: 600px;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.contact-block .contact img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -khtml-border-radius: 5px 0 0 5px;
+}
+.contact-block .contact .contact-text {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  align-items: center;
+}
+.contact-block .contact .contact-text p:nth-child(odd) {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+
+.map-block {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.map-block iframe {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  width: 600px;
+  height: 300px;
+}
+.map-block p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
 /*# sourceMappingURL=style.css.map */

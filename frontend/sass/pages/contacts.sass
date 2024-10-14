@@ -1,0 +1,47 @@
+.contact-block
+    @include main-font
+    display: flex
+    flex-direction: column
+    margin-top: 60px
+    align-items: center
+    gap: 45px
+
+    .contact
+        @include shadow
+        @include border-radius(5px 0 0 5px)
+        width: 600px
+        height: 150px
+        display: flex
+        flex-direction: row
+        gap: 15px
+
+        img
+            width: 150px
+            height: 150px
+            object-fit: cover
+            @include border-radius(5px 0 0 5px)
+
+        .contact-text
+            display: grid
+            grid-template-columns: 125px 1fr
+            align-items: center
+
+            p:nth-child(odd)
+                color: rgba(0, 0, 0, 0.5)
+                font-weight: 600
+
+.map-block
+    padding-top: 60px
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 10px
+
+    iframe
+        @include border-radius(5px)
+        @include shadow
+        width: 600px
+        height: 300px
+
+    p
+        @include main-font
