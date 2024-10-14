@@ -31,29 +31,22 @@
             &[type='submit']
                 background-color: $dark-blue
                 color: #fff
-                transition: all 0.3s ease-in-out
+                transition: all 0.5s ease-in-out
                 cursor: pointer
-                
 
                 &:hover
                     background-color: #ffffff
                     color: $dark-blue
                     border: 2px solid $dark-blue
 
-
         .link-block
             a
-                color: $dark-blue
+                @include link($dark-blue)
                 font-size: 12px
                 text-decoration: none
 
                 &:first-child
-                    color: $link-color
+                    @include link($link-color)
 
                 &.right
                     float: right
-
-                &:hover
-                    text-decoration: underline
-
-

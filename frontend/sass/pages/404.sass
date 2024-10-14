@@ -1,0 +1,18 @@
+.center
+    @include center
+    @include flex-center
+    @include main-font
+    gap: 35px
+    justify-content: center
+
+    p
+        font-size: 24px
+
+    h1
+        font-family: $logo-font
+        font-weight: 800
+        font-size: 128px
+
+    a
+        @include link($link-color)
+        font-size: 24px

@@ -5,6 +5,8 @@ $dark-grey: #14151B
 $light-grey: #E6E6E6
 $dark-blue: #232A34
 $link-color: #3763FF
+$translucent: rgba(0, 0, 0, 0.5)
+$transparent-white: rgba(255, 255, 255, 0.5)
 
 @mixin shadow
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4)
@@ -36,3 +38,14 @@ $link-color: #3763FF
     -webkit-border-radius: $radius
     -moz-border-radius: $radius
     -khtml-border-radius: $radius
+
+@mixin link($color, $hover-color: null, $text-decoration: true)
+    color: $color
+    text-decoration: none
+    transition: color 0.1s ease-out
+
+    &:hover
+        @if $text-decoration
+            text-decoration: underline
+        @if $hover-color
+            color: $hover-color

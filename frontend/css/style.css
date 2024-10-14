@@ -151,11 +151,20 @@ table {
 .header-container .header a {
   color: #333;
   text-decoration: none;
+  transition: color 0.1s ease-out;
 }
-.header-container .header .header-logo {
+.header-container .header a:hover {
+  text-decoration: underline;
+}
+.header-container .header .header-logo a {
   font-family: "Joti One", serif;
   font-size: 30px;
+  color: #333;
   text-decoration: none;
+  transition: color 0.1s ease-out;
+}
+.header-container .header .header-logo a:hover {
+  color: #333;
 }
 .header-container .header .header-menu {
   font-family: "Montserrat", sans-serif;
@@ -320,7 +329,7 @@ table {
 .form-container form input[type=submit] {
   background-color: #232A34;
   color: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
 .form-container form input[type=submit]:hover {
@@ -330,17 +339,24 @@ table {
 }
 .form-container form .link-block a {
   color: #232A34;
+  text-decoration: none;
+  transition: color 0.1s ease-out;
   font-size: 12px;
   text-decoration: none;
 }
+.form-container form .link-block a:hover {
+  text-decoration: underline;
+}
 .form-container form .link-block a:first-child {
   color: #3763FF;
+  text-decoration: none;
+  transition: color 0.1s ease-out;
+}
+.form-container form .link-block a:first-child:hover {
+  text-decoration: underline;
 }
 .form-container form .link-block a.right {
   float: right;
-}
-.form-container form .link-block a:hover {
-  text-decoration: underline;
 }
 
 .contact-block {
@@ -406,6 +422,62 @@ table {
 .map-block p {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+}
+
+.about-block {
+  margin-top: 90px;
+}
+.about-block h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+.about-block .about-text {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.about-block .about-text ul {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.about-block .about-text ul li {
+  list-style-type: "- ";
+}
+
+.center {
+  position: fixed;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  gap: 35px;
+  justify-content: center;
+}
+.center p {
+  font-size: 24px;
+}
+.center h1 {
+  font-family: "Joti One", serif;
+  font-weight: 800;
+  font-size: 128px;
+}
+.center a {
+  color: #3763FF;
+  text-decoration: none;
+  transition: color 0.1s ease-out;
+  font-size: 24px;
+}
+.center a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,13 +10,13 @@
         width: 1000px
 
         a
-            color: $main-color
-            text-decoration: none
+            @include link($main-color)
 
         .header-logo
-            font-family: $logo-font
-            font-size: 30px
-            text-decoration: none
+            a
+                font-family: $logo-font
+                font-size: 30px
+                @include link($main-color, $main-color, false)
 
         .header-menu
             @include main-font
