@@ -14,7 +14,7 @@ $transparent-white: rgba(255, 255, 255, 0.5)
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4)
 
     @if $isHover
-        transition: all 0.1s ease-out
+        transition: all 0.3s ease-out
         cursor: pointer
         &:hover
             -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6)
@@ -50,11 +50,15 @@ $transparent-white: rgba(255, 255, 255, 0.5)
 @mixin link($color, $hover-color: null, $text-decoration: true)
     color: $color
     text-decoration: none
-    transition: color 0.1s ease-out
+    background-image: linear-gradient($color, $color)
+    background-position: 0% 100%
+    background-repeat: no-repeat
+    background-size: 0% 2px
+    transition: all .3s ease-in-out
 
     &:hover
         @if $text-decoration
-            text-decoration: underline
+            background-size: 100% 2px
         @if $hover-color
             color: $hover-color
 
