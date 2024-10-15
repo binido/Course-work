@@ -1,0 +1,86 @@
+.main-container
+    .main
+        .info-block
+            margin-top: 40px
+            display: flex
+            flex-direction: row
+            gap: 30px
+            // padding-left: 60px
+
+            img
+                @include img(200px)
+                @include border-radius(5px)
+
+            .info-text
+                display: flex
+                flex-direction: column
+                gap: 10px
+
+                h1
+                    font-size: 24px
+                    font-weight: 600
+                    color: $translucent
+
+                p
+                    font-size: 18px
+
+                    span
+                        color: $dark-blue
+                        font-weight: 600
+
+                    a
+                        @include link($link-color)
+
+        .info
+            margin-top: 40px
+            display: flex
+            flex-direction: column
+
+            h1
+                font-size: 32px
+                font-weight: 700
+                color: $translucent
+
+            &-content
+                gap: 1rem
+
+                p
+                    font-size: 18px
+                    span
+                        color: $dark-blue
+                        font-weight: 600
+
+            &-feedback
+                gap: 25px
+
+                h1
+                    margin-bottom: 1rem
+
+                .feedback
+                    display: flex
+                    width: 750px
+                    padding: 10px
+
+                    @include shadow
+                    @include border-radius(5px)
+
+                    img
+                        @include img(100px)
+                        @include border-radius(5px 0 0 5px)
+
+                    .feedback-text
+                        margin-left: 1rem
+                        display: flex
+                        flex-direction: column
+                        gap: 0.5rem
+
+                        .text
+                            &-header
+                                font-size: 18px
+                                display: flex
+                                justify-content: space-between
+                                flex-direction: row
+
+                            &-footer
+                                font-size: 14px
+                                color: $translucent
