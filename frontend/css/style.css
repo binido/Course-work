@@ -357,6 +357,10 @@ table {
   color: #232A34;
   border: 2px solid #232A34;
 }
+.form-container form .link-block {
+  display: flex;
+  justify-content: space-between;
+}
 .form-container form .link-block a {
   color: #232A34;
   text-decoration: none;
@@ -366,6 +370,7 @@ table {
   background-size: 0% 2px;
   transition: all 0.3s ease-in-out;
   font-size: 12px;
+  height: 0.85rem;
   text-decoration: none;
 }
 .form-container form .link-block a:hover {
@@ -382,9 +387,6 @@ table {
 }
 .form-container form .link-block a:first-child:hover {
   background-size: 100% 2px;
-}
-.form-container form .link-block a.right {
-  float: right;
 }
 
 .contact-block {
@@ -618,10 +620,6 @@ table {
 }
 .center a:hover {
   background-size: 100% 2px;
-}
-
-* {
-  outline: 1px solid rgba(255, 0, 0, 0.5058823529);
 }
 
 /*# sourceMappingURL=style.css.map */

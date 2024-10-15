@@ -40,13 +40,14 @@
                     border: 2px solid $dark-blue
 
         .link-block
+            display: flex
+            justify-content: space-between
+
             a
                 @include link($dark-blue)
                 font-size: 12px
+                height: .85rem
                 text-decoration: none
 
                 &:first-child
                     @include link($link-color)
-
-                &.right
-                    float: right
