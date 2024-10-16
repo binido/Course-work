@@ -62,6 +62,11 @@ $transparent-white: rgba(255, 255, 255, 0.5)
         @if $hover-color
             color: $hover-color
 
+    &.active
+        color: $translucent
+        background-image: linear-gradient($translucent, $translucent)
+        background-size: 100% 2px
+
 @mixin img($width, $height: $width)
     width: $width
     height: $height

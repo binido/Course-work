@@ -162,6 +162,11 @@ table {
 .header-container .header .header-logo a:hover {
   color: #333;
 }
+.header-container .header .header-logo a.active {
+  color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: 100% 2px;
+}
 .header-container .header .header-menu {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -182,6 +187,11 @@ table {
   height: 1.1rem;
 }
 .header-container .header .header-menu a:hover {
+  background-size: 100% 2px;
+}
+.header-container .header .header-menu a.active {
+  color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: 100% 2px;
 }
 
@@ -243,6 +253,11 @@ table {
 .footer-container .footer .footer-block ul li a:hover {
   background-size: 100% 2px;
   color: rgba(255, 255, 255, 0.9);
+}
+.footer-container .footer .footer-block ul li a.active {
+  color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: 100% 2px;
 }
 
 .main-container {
@@ -376,6 +391,11 @@ table {
 .form-container form .link-block a:hover {
   background-size: 100% 2px;
 }
+.form-container form .link-block a.active {
+  color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: 100% 2px;
+}
 .form-container form .link-block a:first-child {
   color: #3763FF;
   text-decoration: none;
@@ -386,6 +406,11 @@ table {
   transition: all 0.3s ease-in-out;
 }
 .form-container form .link-block a:first-child:hover {
+  background-size: 100% 2px;
+}
+.form-container form .link-block a:first-child.active {
+  color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: 100% 2px;
 }
 
@@ -522,6 +547,11 @@ table {
 .main-container .main .info-block .info-text p a:hover {
   background-size: 100% 2px;
 }
+.main-container .main .info-block .info-text p a.active {
+  color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: 100% 2px;
+}
 .main-container .main .info {
   margin-top: 40px;
   display: flex;
@@ -619,6 +649,11 @@ table {
   font-size: 24px;
 }
 .center a:hover {
+  background-size: 100% 2px;
+}
+.center a.active {
+  color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: 100% 2px;
 }
 
