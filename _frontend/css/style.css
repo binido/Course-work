@@ -217,6 +217,10 @@ table {
   -khtml-border-radius: 5px;
   gap: 20px;
 }
+.footer-container .footer .footer-block span {
+  display: inline-block;
+  transform: scaleX(-1);
+}
 .footer-container .footer .footer-block h2, .footer-container .footer .footer-block h3 {
   color: #fff;
   font-weight: 700;
@@ -272,9 +276,65 @@ table {
   flex-direction: column;
   width: 1000px;
 }
+.main-container .main .main-text {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  align-items: center;
+  gap: 10px;
+  margin: 60px auto 0;
+}
+.main-container .main .main-text h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+.main-container .main .main-text ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.main-container .main .main-text ul li {
+  list-style-type: "- ";
+  margin-left: 20px;
+}
+.main-container .main .main-text img {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+.main-container .main .main-text p {
+  margin-top: 10px;
+}
+.main-container .main .main-text span {
+  color: #232A34;
+  font-weight: 600;
+}
 .main-container .main .main-block {
-  margin-top: 60px;
+  margin-top: 20px;
   width: 100%;
+}
+.main-container .main .main-block button {
+  width: 350px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  padding: 0 15px;
+  background-color: #232A34;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  float: right;
+  margin-top: 30px;
+}
+.main-container .main .main-block button:hover {
+  background-color: #ffffff;
+  color: #232A34;
+  border: 2px solid #232A34;
 }
 .main-container .main .main-block h2 {
   font-size: 24px;

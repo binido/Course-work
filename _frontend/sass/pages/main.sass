@@ -6,9 +6,61 @@
         flex-direction: column
         width: 1000px
 
+        .main-text
+            display: flex
+            flex-direction: column
+            width: 800px
+            align-items: center
+            gap: 10px
+            margin: 60px auto 0
+
+            h2
+                font-size: 24px
+                color: $main-color
+                text-align: center
+
+            ul
+                display: flex
+                flex-direction: column
+                gap: 5px
+                li
+                    list-style-type: '- '
+                    margin-left: 20px
+
+            img
+                @include border-radius(5px)
+
+            p
+                margin-top: 10px
+
+            span
+                color: $dark-blue
+                font-weight: 600
+
         .main-block
-            margin-top: 60px
+            margin-top: 20px
             width: 100%
+
+            button
+                width: 350px
+                height: 50px
+                border: none
+                outline: none
+                font-size: 16px
+                font-weight: 600
+                color: #111
+                padding: 0 15px
+                background-color: $dark-blue
+                color: #fff
+                transition: all 0.5s ease-in-out
+                cursor: pointer
+                float: right
+                margin-top: 30px
+
+                &:hover
+                    background-color: #ffffff
+                    color: $dark-blue
+                    border: 2px solid $dark-blue
 
             h2
                 font-size: 24px
