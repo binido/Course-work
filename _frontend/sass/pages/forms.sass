@@ -9,6 +9,11 @@
         flex-direction: column
         gap: 15px
 
+        select
+            @include select
+
+
+
         h1
             font-size: 36px
             font-weight: 700
@@ -16,28 +21,11 @@
             align-self: center
 
         input
-            width: 350px
-            height: 50px
-            border: none
-            outline: none
-            font-size: 16px
-            font-weight: 600
-            color: #111
-            padding: 0 15px
+            @include input(350px, 50px)
 
-            &[type='text'], &[type='password']
-                background-color: $light-grey
 
-            &[type='submit']
-                background-color: $dark-blue
-                color: #fff
-                transition: all 0.5s ease-in-out
-                cursor: pointer
-
-                &:hover
-                    background-color: #ffffff
-                    color: $dark-blue
-                    border: 2px solid $dark-blue
+            &[type='button']
+                @include button(350px, 50px)
 
         .link-block
             display: flex

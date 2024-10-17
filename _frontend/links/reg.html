@@ -12,12 +12,17 @@
       <form action="">
         <h1>Регистрация</h1>
         <input type="text" placeholder="Почта" />
+        <input type="text" placeholder="Номер" />
         <input type="password" placeholder="Пароль" />
         <input type="password" placeholder="Повторите пароль" />
         <div class="link-block">
           <a href="login.html">Уже есть аккаунт?</a>
         </div>
-        <input type="submit" value="Войти" />
+        <input
+          type="button"
+          value="Войти"
+          onclick="document.location.href='login.html'"
+        />
       </form>
     </div>
   </body>

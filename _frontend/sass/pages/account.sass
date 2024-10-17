@@ -1,0 +1,76 @@
+.main-container
+    .main
+        .account-container
+            margin-top: 40px
+            @include flex-center
+            gap: 20px
+
+            .account
+                @include shadow
+                @include border-radius(5px)
+                width: 800px
+                padding: 20px
+
+                h1
+                    font-size: 24px
+                    font-weight: 600
+                    color: $translucent
+
+                .image-block
+                    margin-top: 20px
+                    display: flex
+                    flex-direction: row
+                    gap: 20px
+
+                    img
+                        @include img(150px)
+                        @include border-radius(5px)
+
+                    .image-text
+                        display: flex
+                        flex-direction: column
+                        gap: 50px
+                        max-width: 215px
+                        align-items: center
+                        justify-content: center
+
+                        p
+                            @include main-font
+                            text-align: center
+                            color: $translucent
+
+                        button
+                            @include button(200px, 40px)
+                            @include border-radius(5px)
+
+                form
+                    margin-top: 45px
+                    display: grid
+                    gap: 20px
+                    align-items: center
+                    justify-content: center
+                    grid-template-columns: 1fr 1fr
+
+                    input
+                        &[type='text'], &[type='password'], &[type='tel']
+                            @include input(350px, 50px)
+
+                        &[type='button']
+                            @include button(350px, 50px)
+                            @include border-radius(5px)
+
+                &>ul
+                    display: flex
+                    flex-direction: column
+                    gap: 5px
+                    margin-top: 10px
+
+                    li
+                        list-style: '- '
+                        margin-left: 20px
+
+                button
+                    @include button(350px, 50px)
+                    @include border-radius(5px)
+                    margin-top: 30px
+                    float: right

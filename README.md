@@ -10,7 +10,7 @@ source venv/bin/activate
 
 #### Windows
 ```shell
-venv\Scripts\activete
+venv\Scripts\activate
 ```
 
 ### And start
