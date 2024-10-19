@@ -1,13 +1,13 @@
 <div class="header-container">
   <div class="header">
     <div class="header-logo">
-      <a href="index.html">HandyMan</a>
+      <a href="{% url 'index'%}">HandyMan</a>
     </div>
     <div class="header-menu">
-      <a href="masterts.html">Мастера</a>
-      <a href="links/contacts.html">Контакты</a>
-      <a href="links/about.html">О нас</a>
-      <a href="feedback.html">Отзывы</a>
+      <a href="{% url 'masters' %}">Мастера</a>
+      <a href="{% url 'contacts' %}">Контакты</a>
+      <a href="{% url 'about' %}">О нас</a>
+      <a href="feedback.html">Отзыв</a>
       <a href="links/login.html">Войти</a>
     </div>
   </div>
