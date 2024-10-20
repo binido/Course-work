@@ -1,19 +1,24 @@
-# Course work
+# Start app
+### 1. Create venv
 
-## Start app
-
-### Create venv
-#### Linux/Mac
+> Linux/Mac
 ```bash
 source venv/bin/activate
 ```
 
-#### Windows
+>Windows
 ```shell
 venv\Scripts\activate
 ```
 
-### And start
+  
+### 2. Install requirements
+```bash
+pip install -r requirements.txt
+```
+
+
+### 3. Start server
 ```bash
 python manage.py runserver
 ```
