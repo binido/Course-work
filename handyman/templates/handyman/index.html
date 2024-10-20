@@ -47,7 +47,7 @@
             {% for master in masters %}
               <div 
               class="card" 
-              onclick="document.location.href='links/master.html'"
+              onclick="document.location.href='{% url 'masters_type' master.skill %}'"
               >
               <img src="https://placehold.co/150x150" alt="" />
               <div class="card-text">

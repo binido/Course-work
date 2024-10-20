@@ -1,4 +1,6 @@
 venv
+**/__pycache__/
+__pycache__
 
 # Created by https://www.gitignore.io
 

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from handyman.models import Master, User, Feedback, Grade, Skills
 
 
 mastersDb = [
@@ -6,7 +7,7 @@ mastersDb = [
         "id": 1,
         "name": "Mastert1",
         "number": "111",
-        "skill": "sdf",
+        "skill": "Slesar",
         "work_period": "sdf",
         "weekend": "sdf",
         "salary": "sdf",
@@ -18,7 +19,7 @@ mastersDb = [
         "id": 2,
         "name": "Mastert2",
         "number": "222",
-        "skill": "sdf",
+        "skill": "Plotnik",
         "work_period": "sdf",
         "weekend": "sdf",
         "salary": "sdf",
@@ -30,7 +31,7 @@ mastersDb = [
         "id": 3,
         "name": "Mastert3",
         "number": "333",
-        "skill": "sdf",
+        "skill": "Santehnic",
         "work_period": "sdf",
         "weekend": "sdf",
         "salary": "sdf",
@@ -42,7 +43,7 @@ mastersDb = [
         "id": 4,
         "name": "Mastert4",
         "number": "444",
-        "skill": "sdf",
+        "skill": "Mebelshic",
         "work_period": "sdf",
         "weekend": "sdf",
         "salary": "sdf",
@@ -54,7 +55,7 @@ mastersDb = [
         "id": 5,
         "name": "Mastert5",
         "number": "555",
-        "skill": "sdf",
+        "skill": "Gey",
         "work_period": "sdf",
         "weekend": "sdf",
         "salary": "sdf",
@@ -66,7 +67,7 @@ mastersDb = [
         "id": 6,
         "name": "Mastert6",
         "number": "666",
-        "skill": "sdf",
+        "skill": "Pidoras",
         "work_period": "sdf",
         "weekend": "sdf",
         "salary": "sdf",
@@ -84,14 +85,23 @@ def index(request):
 
 def about(request):
     data = {"title": "О нас"}
-    return render(request, "handyman/pages/about.html", context=data)
+    return render(request, "handyman/pages/static_pages/about.html", context=data)
 
 
 def contacts(request):
     data = {"title": "Контакты"}
-    return render(request, "handyman/pages/contacts.html", context=data)
+    return render(request, "handyman/pages/static_pages/contacts.html", context=data)
 
 
 def masters(request):
     data = {"title": "Мастера"}
-    return render(request, "handyman/pages/masters.html", context=data)
+    return render(request, "handyman/pages/master_pages/masters.html", context=data)
+
+
+def show_master(request, skill_slug):
+    # skill = get_object_or_404(Skills, slug=skill_slug)
+    # masters = Master.objects.filter(skill=skill)
+
+    # data = {"title": skill.name, "skill": skill, "masters": masters}
+    data = {"title": skill_slug, "skill": skill_slug, "masters": mastersDb}
+    return render(request, "handyman/pages/master_pages/mastertype.html", context=data)

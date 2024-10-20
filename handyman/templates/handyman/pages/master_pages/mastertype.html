@@ -1,0 +1,28 @@
+{% extends "base.html" %} {%block content %} 
+{% include "handyman/include/header.html" %}
+
+<div class="main-container">
+  <div class="main">
+    <div class="main-block">
+      <h2>{{skill}}</h2>
+
+      <div class="grid-block">
+        {% for master in masters %}
+        <div class="card" onclick="document.location.href='links/master.html'">
+          <img src="https://placehold.co/150x150" alt="" />
+          <div class="card-text">
+            <h3>{{ master.name }}</h3>
+            <ul>
+              <li>{{master.skill}}</li>
+              <li>От {{master.salary}} руб</li>
+              <li>Отценка: {{master.grade}}\10</li>
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% include "handyman/include/footer.html" %} {% endblock content %}
+</div>
