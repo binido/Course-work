@@ -1,175 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="img/Logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="script.js" defer></script>
-    <title>Главная | HandyMan</title>
-  </head>
 
-  <body>
-    <div class="header-container">
-      <div class="header">
-        <div class="header-logo">
-          <a href="index.html">HandyMan</a>
-        </div>
-        <div class="header-menu">
-          <a href="links/masters.html">Мастера</a>
-          <a href="links/contacts.html">Контакты</a>
-          <a href="links/about.html">О нас</a>
-          <a href="feedback.html">Отзыв</a>
-          <a href="links/login.html">Войти</a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="img/Logo.svg" type="image/x-icon" />
+  <!-- Блок для слайдера -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="swiper.js" defer></script>
+  <!-- Блок для слайдера -->
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="script.js" defer></script>
+  <title>Главная | HandyMan</title>
+</head>
+
+<body>
+  <div class="header-container">
+    <div class="header">
+      <div class="header-logo">
+        <a href="index.html">HandyMan</a>
+      </div>
+      <div class="header-menu">
+        <a href="links/masters.html">Мастера</a>
+        <a href="links/contacts.html">Контакты</a>
+        <a href="links/about.html">О нас</a>
+        <a href="links/feedbacks.html">Отзывы</a>
+        <a href="links/login.html">Войти</a>
       </div>
     </div>
+  </div>
 
-    <div class="main-container">
-      <div class="main">
-        <div class="main-text">
-           <h2>
-              <span>Handyman</span> - Ваш надежный помощник по вызову мастера на
-              дом
-            </h2>
-          <img src="https://placehold.co/800x300" alt="" />
-           
-            <p>
-              Добро пожаловать в Handyman! Мы предлагаем широкий спектр услуг по
-              вызову мастеров на дом, чтобы решить любые ваши бытовые проблемы. <br><br>
-              Наша команда профессионалов включает: 
-              <ul>
-                <li><span>Сантехники</span>: быстро устранят
-              протечки и установят новое оборудование.</li>
-                <li><span>Электрики</span>: обеспечат
-              безопасность и комфорт с качественным ремонтом электропроводки.</li>
-                <li><span>Столяры и плотники</span>: создадут уникальные изделия на заказ и
-              выполнят любые работы с деревом.</li>
-                <li><span>Слесари</span>: помогут с ремонтом и
-              обслуживанием металлических конструкций.</li>
-                <li><span>Мебельщики</span>: соберут и
-              отремонтируют вашу мебель, сделают ее функциональной и красивой.</li>
-                <li><span>Маляры</span>: преобразят ваш интерьер с помощью качественной покраски и
-              отделки. </li>
-                <li><span>Универсальные мастера</span>: решат множество задач, от мелкого
-              ремонта до комплексных проектов.</li>
-              </ul>
-               
-              <br>
-               Мы гарантируем высокое качество
-              услуг, оперативность и индивидуальный подход к каждому клиенту.
-              Обратитесь к нам, и мы сделаем ваш дом комфортнее!
-            </p>
-        </div>
+  <div class="main-container">
+    <div class="main">
+      <div class="main-slider">
+        <h2>
+          <span>Handyman</span> - Ваш надежный помощник по вызову мастера на
+          дом
+        </h2>
+        <div class="slider-block">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
 
-        <div class="main-block">
-          <h2>Наши лучшие мастера</h2>
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
 
-          <div class="grid-block">
-            <div class="card" onClick="document.location.href='links/master.html'">
-              <img src="img/Ivanov.jpg" alt="" />
-              <div class="card-text">
-                <h3>Иванов Иван</h3>
-                <ul>
-                  <li>Электрик</li>
-                  <li>От 10 000 руб</li>
-                  <li>Отценка: 10\10</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card">
-              <img src="img/Ivanov.jpg" alt="" />
-              <div class="card-text">
-                <h3>Иванов Иван</h3>
-                <ul>
-                  <li>Электрик</li>
-                  <li>От 10 000 руб</li>
-                  <li>Отценка: 10\10</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card">
-              <img src="img/Ivanov.jpg" alt="" />
-              <div class="card-text">
-                <h3>Иванов Иван</h3>
-                <ul>
-                  <li>Электрик</li>
-                  <li>От 10 000 руб</li>
-                  <li>Отценка: 10\10</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card">
-              <img src="img/Ivanov.jpg" alt="" />
-              <div class="card-text">
-                <h3>Иванов Иван</h3>
-                <ul>
-                  <li>Электрик</li>
-                  <li>От 10 000 руб</li>
-                  <li>Отценка: 10\10</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card">
-              <img src="img/Ivanov.jpg" alt="" />
-              <div class="card-text">
-                <h3>Иванов Иван</h3>
-                <ul>
-                  <li>Электрик</li>
-                  <li>От 10 000 руб</li>
-                  <li>Отценка: 10\10</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card">
-              <img src="img/Ivanov.jpg" alt="" />
-              <div class="card-text">
-                <h3>Иванов Иван</h3>
-                <ul>
-                  <li>Электрик</li>
-                  <li>От 10 000 руб</li>
-                  <li>Отценка: 10\10</li>
-                </ul>
-              </div>
-            </div>
           </div>
-          <button onclick="document.location.href='links/masters.html'">Все мастера</button>
         </div>
       </div>
-    </div>
 
-    <div class="footer-container">
-      <div class="footer">
-        <div class="footer-block">
-          <h2>HandyMan</h2>
-          <ul class="mt-20">
-            <li>Разработал Пименов А.Е.</li>
-            <li><a href="https://github.com/binido/Course-work">GitHub проекта</a></li>
-            <li><span>&copy;</span> 2024 HandyMan. Проект с открытым исходным кодом</li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <h3>Мастера</h3>
-          <ul class="grid-ul">
-            <li><a href="">Сантехники</a></li>
-            <li><a href="">Плотники</a></li>
-            <li><a href="">Электрики</a></li>
-            <li><a href="">Маляры</a></li>
-            <li><a href="">Слесари</a></li>
-            <li><a href="">Столяры</a></li>
-            <li><a href="">Мебельшики</a></li>
-            <li><a href="">Универсальные</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <h3>Навигация</h3>
-          <ul>
-            <li><a href="">Контакты</a></li>
-            <li><a href="">О нас</a></li>
-            <li><a href="">Отзывы</a></li>
-          </ul>
-        </div>
+      <div class="main-banner">
+        <h1>+7(999)999-99-99 - Звоните круглосуточно!!!</h1>
+        <p>Позвоните и наш менеджер поможет определиться с мастером или оставьте заявку на сайте и вам перезвонит сам
+          мастер!!</p>
+        <button type="button" onclick="location.href='#'">
+          Вызвать
+        </button>
+      </div>
+
+
+      <div class="main-text">
+        <p>
+          Добро пожаловать в Handyman! Мы предлагаем широкий спектр услуг по
+          вызову мастеров на дом, чтобы решить любые ваши бытовые проблемы. <br><br>
+          Наша команда профессионалов включает:
+        <ul>
+          <li><span>Сантехники</span>: быстро устранят
+            протечки и установят новое оборудование.</li>
+          <li><span>Электрики</span>: обеспечат
+            безопасность и комфорт с качественным ремонтом электропроводки.</li>
+          <li><span>Столяры и плотники</span>: создадут уникальные изделия на заказ и
+            выполнят любые работы с деревом.</li>
+          <li><span>Слесари</span>: помогут с ремонтом и
+            обслуживанием металлических конструкций.</li>
+          <li><span>Мебельщики</span>: соберут и
+            отремонтируют вашу мебель, сделают ее функциональной и красивой.</li>
+          <li><span>Маляры</span>: преобразят ваш интерьер с помощью качественной покраски и
+            отделки. </li>
+          <li><span>Универсальные мастера</span>: решат множество задач, от мелкого
+            ремонта до комплексных проектов.</li>
+        </ul>
+
+        <br>
+        Мы гарантируем высокое качество
+        услуг, оперативность и индивидуальный подход к каждому клиенту.
+        Обратитесь к нам, и мы сделаем ваш дом комфортнее!
+        </p>
+
+        <button type="button" onclick="location.href='links/masters.html'">
+          Все наши мастера
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer">
+      <div class="footer-block">
+        <h2>HandyMan</h2>
+        <ul class="mt-20">
+          <li>Разработал Пименов А.Е.</li>
+          <li><a href="https://github.com/binido/Course-work">GitHub проекта</a></li>
+          <li><span>&copy;</span> 2024 HandyMan. Проект с открытым исходным кодом</li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Мастера</h3>
+        <ul class="grid-ul">
+          <li><a href="">Сантехники</a></li>
+          <li><a href="">Плотники</a></li>
+          <li><a href="">Электрики</a></li>
+          <li><a href="">Маляры</a></li>
+          <li><a href="">Слесари</a></li>
+          <li><a href="">Столяры</a></li>
+          <li><a href="">Мебельшики</a></li>
+          <li><a href="">Универсальные</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">О нас</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
