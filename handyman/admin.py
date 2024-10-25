@@ -1,8 +1,12 @@
 from django.contrib import admin
 
-from .models import Group, Master, User
+from .models import Master, Skills, Workarea
 
-# Register your models here.
-admin.site.register(User)
-admin.site.register(Group)
+# @admin.register(Master)
+# class MasterAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'experience')
+
+
 admin.site.register(Master)
+admin.site.register(Skills)
+admin.site.register(Workarea)

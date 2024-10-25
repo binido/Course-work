@@ -1029,6 +1029,7 @@ table {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -khtml-border-radius: 5px;
+  max-width: 1000px;
 }
 .main-container .main .feedbacks-list-item img {
   width: 100px;
@@ -1043,13 +1044,15 @@ table {
 .main-container .main .feedbacks-list-item-text-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 }
 .main-container .main .feedbacks-list-item-text-header h2 {
   font-size: 20px;
   font-weight: 600;
   color: #232A34;
+}
+.main-container .main .feedbacks-list-item-text-header h2:last-child {
+  margin-left: auto;
 }
 .main-container .main .feedbacks-list-item-text-footer p {
   font-size: 16px;

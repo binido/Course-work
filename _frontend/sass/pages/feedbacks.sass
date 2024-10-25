@@ -4,13 +4,13 @@
             display: flex
             flex-direction: column
             margin-top: 40px
-            
+
             &-info
                 display: flex
                 flex-direction: column
                 gap: 20px
 
-                h1 
+                h1
                     font-size: 24px
                     font-weight: 600
                     color: $translucent
@@ -37,6 +37,7 @@
                     padding: 10px
                     @include shadow
                     @include border-radius(5px)
+                    max-width: 1000px
 
                     img
                         @include img(100px, 100px)
@@ -49,13 +50,16 @@
                         &-header
                             display: flex
                             flex-direction: row
-                            justify-content: space-between
+                            // justify-content: space-between
                             align-items: center
 
                             h2
                                 font-size: 20px
                                 font-weight: 600
                                 color: $dark-blue
+
+                                &:last-child
+                                    margin-left: auto
 
                         &-footer
                             p

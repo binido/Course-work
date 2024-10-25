@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block content %} {% comment %}
+-------------------------------------------------------------- {% endcomment %}
+{% include "handyman/include/header.html" %}
+
+<div class="main-container">
+  <div class="main">
+    <div class="feedbacks">
+      <div class="feedbacks-info">
+        <h1>Отзывы</h1>
+        <p>
+          Вы можете оставить отзыв о мастере и рассказать впечатление о
+          проделанной работе
+        </p>
+        <button type="button" onclick="location.href='feedback.html'">
+          Оставить отзыв
+        </button>
+      </div>
+
+      <div class="feedbacks-list">
+        {% comment %} List item {% endcomment %}
+        {% for feedback in feedbacks %}
+
+        <div class="feedbacks-list-item">
+          <img src="https://placehold.co/100x100" alt="" />
+          <div class="feedbacks-list-item-text">
+            <div class="feedbacks-list-item-text-header">
+              {% comment %} <h2>{{feedback.name}}</h2> {% endcomment %}
+              <h2>{{feedback.value}}/10</h2>
+            </div>
+            <div class="feedbacks-list-item-text-footer">
+              <p>
+                {{feedback.text}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        {% comment %} List item {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "handyman/include/footer.html" %} {% endblock content %}

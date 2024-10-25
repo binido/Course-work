@@ -210,7 +210,7 @@ table {
   width: 1000px;
   margin: 20px 0;
   padding: 20px 30px;
-  background-color: #232a34;
+  background-color: #232A34;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -221,8 +221,7 @@ table {
   display: inline-block;
   transform: scaleX(-1);
 }
-.footer-container .footer .footer-block h2,
-.footer-container .footer .footer-block h3 {
+.footer-container .footer .footer-block h2, .footer-container .footer .footer-block h3 {
   color: #fff;
   font-weight: 700;
 }
@@ -249,10 +248,7 @@ table {
 .footer-container .footer .footer-block ul li a {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.5)
-  );
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -268,6 +264,26 @@ table {
   background-size: 100% 2px;
 }
 
+:root {
+  --swiper-pagination-color: #333;
+}
+
+.slider-block {
+  width: 1000px;
+  height: 400px;
+}
+.slider-block .swiper {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+.slider-block .swiper .swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+  height: none;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -280,7 +296,66 @@ table {
   flex-direction: column;
   width: 1000px;
 }
-.main-container .main .main-text {
+.main-container .main-slider {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.main-container .main-slider .slider-block {
+  margin-top: 20px;
+}
+.main-container .main-slider h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+.main-container .main-slider h2 span {
+  color: #232A34;
+  font-weight: 600;
+}
+.main-container .main-banner {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.main-container .main-banner h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #232A34;
+}
+.main-container .main-banner p {
+  font-size: 20px;
+  text-align: center;
+  width: 550px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.main-container .main-banner button {
+  width: 350px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 15px;
+  background-color: #232A34;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+.main-container .main-banner button:hover {
+  background-color: #ffffff;
+  color: #232A34;
+  border: 2px solid #232A34;
+}
+.main-container .main-text {
   display: flex;
   flex-direction: column;
   width: 800px;
@@ -288,32 +363,49 @@ table {
   gap: 10px;
   margin: 60px auto 0;
 }
-.main-container .main .main-text h2 {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-}
-.main-container .main .main-text ul {
+.main-container .main-text ul {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.main-container .main .main-text ul li {
+.main-container .main-text ul li {
   list-style-type: "- ";
   margin-left: 20px;
 }
-.main-container .main .main-text img {
+.main-container .main-text img {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -khtml-border-radius: 5px;
 }
-.main-container .main .main-text p {
+.main-container .main-text p {
   margin-top: 10px;
 }
-.main-container .main .main-text span {
-  color: #232a34;
+.main-container .main-text span {
+  color: #232A34;
   font-weight: 600;
+}
+.main-container .main-text button {
+  width: 350px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 15px;
+  background-color: #232A34;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+.main-container .main-text button:hover {
+  background-color: #ffffff;
+  color: #232A34;
+  border: 2px solid #232A34;
 }
 .main-container .main .main-block {
   margin-top: 20px;
@@ -327,7 +419,7 @@ table {
   font-size: 16px;
   font-weight: 600;
   padding: 0 15px;
-  background-color: #232a34;
+  background-color: #232A34;
   color: #fff;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
@@ -336,13 +428,13 @@ table {
 }
 .main-container .main .main-block button:hover {
   background-color: #ffffff;
-  color: #232a34;
-  border: 2px solid #232a34;
+  color: #232A34;
+  border: 2px solid #232A34;
 }
 .main-container .main .main-block button:hover {
   background-color: #ffffff;
-  color: #232a34;
-  border: 2px solid #232a34;
+  color: #232A34;
+  border: 2px solid #232A34;
 }
 .main-container .main .main-block h2 {
   font-size: 24px;
@@ -364,7 +456,7 @@ table {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -khtml-border-radius: 5px;
-  color: #14151b;
+  color: #14151B;
   padding: 10px;
   display: flex;
 }
@@ -419,7 +511,7 @@ table {
   font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
   padding: 0 15px;
-  background-color: #e6e6e6;
+  background-color: #E6E6E6;
   padding: 0.6em 1.4em 0.5em 0.8em;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -432,7 +524,7 @@ table {
 .form-container form h1 {
   font-size: 36px;
   font-weight: 700;
-  color: #232a34;
+  color: #232A34;
   align-self: center;
 }
 .form-container form input {
@@ -445,27 +537,13 @@ table {
   color: #111;
   padding: 0 15px;
 }
-.form-container form input[type="text"],
-.form-container form input[type="password"],
-.form-container form input[type="email"],
-.form-container form input[type="tel"],
-.form-container form input[type="number"],
-.form-container form input[type="date"],
-.form-container form input[type="search"],
-.form-container form input[type="url"] {
-  background-color: #e6e6e6;
+.form-container form input[type=text], .form-container form input[type=password], .form-container form input[type=email], .form-container form input[type=tel], .form-container form input[type=number], .form-container form input[type=date], .form-container form input[type=search], .form-container form input[type=url] {
+  background-color: #E6E6E6;
 }
-.form-container form input[type="text"].text,
-.form-container form input[type="password"].text,
-.form-container form input[type="email"].text,
-.form-container form input[type="tel"].text,
-.form-container form input[type="number"].text,
-.form-container form input[type="date"].text,
-.form-container form input[type="search"].text,
-.form-container form input[type="url"].text {
+.form-container form input[type=text].text, .form-container form input[type=password].text, .form-container form input[type=email].text, .form-container form input[type=tel].text, .form-container form input[type=number].text, .form-container form input[type=date].text, .form-container form input[type=search].text, .form-container form input[type=url].text {
   height: 100px;
 }
-.form-container form input[type="button"] {
+.form-container form input[type=button] {
   width: 350px;
   height: 50px;
   border: none;
@@ -473,24 +551,24 @@ table {
   font-size: 16px;
   font-weight: 600;
   padding: 0 15px;
-  background-color: #232a34;
+  background-color: #232A34;
   color: #fff;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
-.form-container form input[type="button"]:hover {
+.form-container form input[type=button]:hover {
   background-color: #ffffff;
-  color: #232a34;
-  border: 2px solid #232a34;
+  color: #232A34;
+  border: 2px solid #232A34;
 }
 .form-container form .link-block {
   display: flex;
   justify-content: space-between;
 }
 .form-container form .link-block a {
-  color: #232a34;
+  color: #232A34;
   text-decoration: none;
-  background-image: linear-gradient(#232a34, #232a34);
+  background-image: linear-gradient(#232A34, #232A34);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -508,9 +586,9 @@ table {
   background-size: 100% 2px;
 }
 .form-container form .link-block a:first-child {
-  color: #3763ff;
+  color: #3763FF;
   text-decoration: none;
-  background-image: linear-gradient(#3763ff, #3763ff);
+  background-image: linear-gradient(#3763FF, #3763FF);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -643,13 +721,13 @@ table {
   font-size: 18px;
 }
 .main-container .main .info-block .info-text p span {
-  color: #232a34;
+  color: #232A34;
   font-weight: 600;
 }
 .main-container .main .info-block .info-text p a {
-  color: #3763ff;
+  color: #3763FF;
   text-decoration: none;
-  background-image: linear-gradient(#3763ff, #3763ff);
+  background-image: linear-gradient(#3763FF, #3763FF);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -680,51 +758,8 @@ table {
   font-size: 18px;
 }
 .main-container .main .info-content p span {
-  color: #232a34;
+  color: #232A34;
   font-weight: 600;
-}
-.main-container .main .info-feedback {
-  gap: 25px;
-}
-.main-container .main .info-feedback h1 {
-  margin-bottom: 1rem;
-}
-.main-container .main .info-feedback .feedback {
-  display: flex;
-  width: 750px;
-  padding: 10px;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -khtml-border-radius: 5px;
-}
-.main-container .main .info-feedback .feedback img {
-  width: 100px;
-  object-fit: cover;
-  height: none;
-  border-radius: 5px 0 0 5px;
-  -webkit-border-radius: 5px 0 0 5px;
-  -moz-border-radius: 5px 0 0 5px;
-  -khtml-border-radius: 5px 0 0 5px;
-}
-.main-container .main .info-feedback .feedback .feedback-text {
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.main-container .main .info-feedback .feedback .feedback-text .text-header {
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-.main-container .main .info-feedback .feedback .feedback-text .text-footer {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.5);
 }
 
 .main-container .main .master-block {
@@ -753,7 +788,7 @@ table {
   -khtml-border-radius: 5px;
   height: 200px;
   width: 200px;
-  color: #14151b;
+  color: #14151B;
   display: flex;
   flex-direction: column;
 }
@@ -831,13 +866,7 @@ table {
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
 }
-.main-container
-  .main
-  .account-container
-  .account
-  .image-block
-  .image-text
-  button {
+.main-container .main .account-container .account .image-block .image-text button {
   width: 200px;
   height: 40px;
   border: none;
@@ -845,7 +874,7 @@ table {
   font-size: 16px;
   font-weight: 600;
   padding: 0 15px;
-  background-color: #232a34;
+  background-color: #232A34;
   color: #fff;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
@@ -854,16 +883,10 @@ table {
   -moz-border-radius: 5px;
   -khtml-border-radius: 5px;
 }
-.main-container
-  .main
-  .account-container
-  .account
-  .image-block
-  .image-text
-  button:hover {
+.main-container .main .account-container .account .image-block .image-text button:hover {
   background-color: #ffffff;
-  color: #232a34;
-  border: 2px solid #232a34;
+  color: #232A34;
+  border: 2px solid #232A34;
 }
 .main-container .main .account-container .account form {
   margin-top: 45px;
@@ -873,9 +896,7 @@ table {
   justify-content: center;
   grid-template-columns: 1fr 1fr;
 }
-.main-container .main .account-container .account form input[type="text"],
-.main-container .main .account-container .account form input[type="password"],
-.main-container .main .account-container .account form input[type="tel"] {
+.main-container .main .account-container .account form input[type=text], .main-container .main .account-container .account form input[type=password], .main-container .main .account-container .account form input[type=tel] {
   width: 350px;
   height: 50px;
   border: none;
@@ -885,299 +906,13 @@ table {
   color: #111;
   padding: 0 15px;
 }
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="text"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="password"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="email"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="tel"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="number"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="date"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="search"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="url"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="text"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="password"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="email"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="tel"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="number"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="date"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="search"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="url"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="text"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="password"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="email"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="tel"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="number"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="date"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="search"],
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="url"] {
-  background-color: #e6e6e6;
+.main-container .main .account-container .account form input[type=text][type=text], .main-container .main .account-container .account form input[type=text][type=password], .main-container .main .account-container .account form input[type=text][type=email], .main-container .main .account-container .account form input[type=text][type=tel], .main-container .main .account-container .account form input[type=text][type=number], .main-container .main .account-container .account form input[type=text][type=date], .main-container .main .account-container .account form input[type=text][type=search], .main-container .main .account-container .account form input[type=text][type=url], .main-container .main .account-container .account form input[type=password][type=text], .main-container .main .account-container .account form input[type=password][type=password], .main-container .main .account-container .account form input[type=password][type=email], .main-container .main .account-container .account form input[type=password][type=tel], .main-container .main .account-container .account form input[type=password][type=number], .main-container .main .account-container .account form input[type=password][type=date], .main-container .main .account-container .account form input[type=password][type=search], .main-container .main .account-container .account form input[type=password][type=url], .main-container .main .account-container .account form input[type=tel][type=text], .main-container .main .account-container .account form input[type=tel][type=password], .main-container .main .account-container .account form input[type=tel][type=email], .main-container .main .account-container .account form input[type=tel][type=tel], .main-container .main .account-container .account form input[type=tel][type=number], .main-container .main .account-container .account form input[type=tel][type=date], .main-container .main .account-container .account form input[type=tel][type=search], .main-container .main .account-container .account form input[type=tel][type=url] {
+  background-color: #E6E6E6;
 }
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="text"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="password"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="email"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="tel"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="number"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="date"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="search"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="text"][type="url"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="text"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="password"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="email"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="tel"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="number"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="date"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="search"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="password"][type="url"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="text"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="password"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="email"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="tel"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="number"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="date"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="search"].text,
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="tel"][type="url"].text {
+.main-container .main .account-container .account form input[type=text][type=text].text, .main-container .main .account-container .account form input[type=text][type=password].text, .main-container .main .account-container .account form input[type=text][type=email].text, .main-container .main .account-container .account form input[type=text][type=tel].text, .main-container .main .account-container .account form input[type=text][type=number].text, .main-container .main .account-container .account form input[type=text][type=date].text, .main-container .main .account-container .account form input[type=text][type=search].text, .main-container .main .account-container .account form input[type=text][type=url].text, .main-container .main .account-container .account form input[type=password][type=text].text, .main-container .main .account-container .account form input[type=password][type=password].text, .main-container .main .account-container .account form input[type=password][type=email].text, .main-container .main .account-container .account form input[type=password][type=tel].text, .main-container .main .account-container .account form input[type=password][type=number].text, .main-container .main .account-container .account form input[type=password][type=date].text, .main-container .main .account-container .account form input[type=password][type=search].text, .main-container .main .account-container .account form input[type=password][type=url].text, .main-container .main .account-container .account form input[type=tel][type=text].text, .main-container .main .account-container .account form input[type=tel][type=password].text, .main-container .main .account-container .account form input[type=tel][type=email].text, .main-container .main .account-container .account form input[type=tel][type=tel].text, .main-container .main .account-container .account form input[type=tel][type=number].text, .main-container .main .account-container .account form input[type=tel][type=date].text, .main-container .main .account-container .account form input[type=tel][type=search].text, .main-container .main .account-container .account form input[type=tel][type=url].text {
   height: 100px;
 }
-.main-container .main .account-container .account form input[type="button"] {
+.main-container .main .account-container .account form input[type=button] {
   width: 350px;
   height: 50px;
   border: none;
@@ -1185,7 +920,7 @@ table {
   font-size: 16px;
   font-weight: 600;
   padding: 0 15px;
-  background-color: #232a34;
+  background-color: #232A34;
   color: #fff;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
@@ -1194,15 +929,10 @@ table {
   -moz-border-radius: 5px;
   -khtml-border-radius: 5px;
 }
-.main-container
-  .main
-  .account-container
-  .account
-  form
-  input[type="button"]:hover {
+.main-container .main .account-container .account form input[type=button]:hover {
   background-color: #ffffff;
-  color: #232a34;
-  border: 2px solid #232a34;
+  color: #232A34;
+  border: 2px solid #232A34;
 }
 .main-container .main .account-container .account > ul {
   display: flex;
@@ -1222,7 +952,7 @@ table {
   font-size: 16px;
   font-weight: 600;
   padding: 0 15px;
-  background-color: #232a34;
+  background-color: #232A34;
   color: #fff;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
@@ -1235,8 +965,98 @@ table {
 }
 .main-container .main .account-container .account button:hover {
   background-color: #ffffff;
-  color: #232a34;
-  border: 2px solid #232a34;
+  color: #232A34;
+  border: 2px solid #232A34;
+}
+
+.main-container .main .feedbacks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.main-container .main .feedbacks-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main-container .main .feedbacks-info h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+.main-container .main .feedbacks-info p {
+  font-size: 20px;
+  width: 700px;
+}
+.main-container .main .feedbacks-info button {
+  width: 350px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 15px;
+  background-color: #232A34;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  align-self: flex-end;
+}
+.main-container .main .feedbacks-info button:hover {
+  background-color: #ffffff;
+  color: #232A34;
+  border: 2px solid #232A34;
+}
+.main-container .main .feedbacks-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.main-container .main .feedbacks-list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  max-width: 1000px;
+}
+.main-container .main .feedbacks-list-item img {
+  width: 100px;
+  object-fit: cover;
+  height: 100px;
+}
+.main-container .main .feedbacks-list-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-container .main .feedbacks-list-item-text-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main-container .main .feedbacks-list-item-text-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #232A34;
+}
+.main-container .main .feedbacks-list-item-text-header h2:last-child {
+  margin-left: auto;
+}
+.main-container .main .feedbacks-list-item-text-footer p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .center {
@@ -1262,9 +1082,9 @@ table {
   font-size: 128px;
 }
 .center a {
-  color: #3763ff;
+  color: #3763FF;
   text-decoration: none;
-  background-image: linear-gradient(#3763ff, #3763ff);
+  background-image: linear-gradient(#3763FF, #3763FF);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;

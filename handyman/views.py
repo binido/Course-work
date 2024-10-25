@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from handyman.models import Master, User, Feedback, Grade, Skills
+from . import models
 
 
 mastersDb = [
@@ -78,6 +78,15 @@ mastersDb = [
 ]
 
 
+feedbacksDb = [
+    {"name": "Пользователь", "value": "9", "text": "hgdshgfsdjhhdbvsfhjghdasfhsdajkfhkjdshakjfhkhdsafhj"},
+    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
+    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
+    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
+    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
+]
+
+
 def index(request):
     data = {"title": "Главная", "masters": mastersDb}
     return render(request, "handyman/index.html", context=data)
@@ -98,10 +107,11 @@ def masters(request):
     return render(request, "handyman/pages/master_pages/masters.html", context=data)
 
 
-def show_master(request, skill_slug):
-    # skill = get_object_or_404(Skills, slug=skill_slug)
-    # masters = Master.objects.filter(skill=skill)
+def feedbacks(request):
+    data = {"title": "Отзывы", "feedbacks": feedbacksDb}
+    return render(request, "handyman/pages/feedback_pages/feedbacks.html", context=data)
 
-    # data = {"title": skill.name, "skill": skill, "masters": masters}
+
+def show_master(request, skill_slug):
     data = {"title": skill_slug, "skill": skill_slug, "masters": mastersDb}
     return render(request, "handyman/pages/master_pages/mastertype.html", context=data)
