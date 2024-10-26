@@ -1,94 +1,10 @@
 from django.shortcuts import get_object_or_404, render
 from . import models
-
-
-mastersDb = [
-    {
-        "id": 1,
-        "name": "Mastert1",
-        "number": "111",
-        "skill": "Slesar",
-        "work_period": "sdf",
-        "weekend": "sdf",
-        "salary": "sdf",
-        "grade": 1,
-        "created_at": "sdf",
-        "status": "sdf",
-    },
-    {
-        "id": 2,
-        "name": "Mastert2",
-        "number": "222",
-        "skill": "Plotnik",
-        "work_period": "sdf",
-        "weekend": "sdf",
-        "salary": "sdf",
-        "grade": 2,
-        "created_at": "sdf",
-        "status": "sdf",
-    },
-    {
-        "id": 3,
-        "name": "Mastert3",
-        "number": "333",
-        "skill": "Santehnic",
-        "work_period": "sdf",
-        "weekend": "sdf",
-        "salary": "sdf",
-        "grade": 3,
-        "created_at": "sdf",
-        "status": "sdf",
-    },
-    {
-        "id": 4,
-        "name": "Mastert4",
-        "number": "444",
-        "skill": "Mebelshic",
-        "work_period": "sdf",
-        "weekend": "sdf",
-        "salary": "sdf",
-        "grade": 4,
-        "created_at": "sdf",
-        "status": "sdf",
-    },
-    {
-        "id": 5,
-        "name": "Mastert5",
-        "number": "555",
-        "skill": "Gey",
-        "work_period": "sdf",
-        "weekend": "sdf",
-        "salary": "sdf",
-        "grade": 5,
-        "created_at": "sdf",
-        "status": "sdf",
-    },
-    {
-        "id": 6,
-        "name": "Mastert6",
-        "number": "666",
-        "skill": "Pidoras",
-        "work_period": "sdf",
-        "weekend": "sdf",
-        "salary": "sdf",
-        "grade": 6,
-        "created_at": "sdf",
-        "status": "sdf",
-    },
-]
-
-
-feedbacksDb = [
-    {"name": "Пользователь", "value": "9", "text": "hgdshgfsdjhhdbvsfhjghdasfhsdajkfhkjdshakjfhkhdsafhj"},
-    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
-    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
-    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
-    {"name": "Пользователь", "value": "10", "text": "hgdshgfsdjh"},
-]
+from .models import Master, Skills
 
 
 def index(request):
-    data = {"title": "Главная", "masters": mastersDb}
+    data = {"title": "Главная"}
     return render(request, "handyman/index.html", context=data)
 
 
@@ -102,16 +18,37 @@ def contacts(request):
     return render(request, "handyman/pages/static_pages/contacts.html", context=data)
 
 
-def masters(request):
-    data = {"title": "Мастера"}
-    return render(request, "handyman/pages/master_pages/masters.html", context=data)
-
-
 def feedbacks(request):
-    data = {"title": "Отзывы", "feedbacks": feedbacksDb}
+    data = {"title": "Отзывы"}
     return render(request, "handyman/pages/feedback_pages/feedbacks.html", context=data)
 
 
-def show_master(request, skill_slug):
-    data = {"title": skill_slug, "skill": skill_slug, "masters": mastersDb}
+def masters(request):
+    skills = Skills.objects.all()
+    data = {
+        "title": "Мастера",
+        "skills": skills,
+    }
+    return render(request, "handyman/pages/master_pages/masters.html", context=data)
+
+
+def show_masters(request, skill_slug):
+    skill = get_object_or_404(Skills, slug=skill_slug)
+    masters = Master.objects.filter(skill=skill)
+    data = {
+        "title": skill.cat_name,
+        "skill": skill,
+        "masters": masters,
+    }
     return render(request, "handyman/pages/master_pages/mastertype.html", context=data)
+
+
+def show_master(request, skill_slug, master_id):
+    skill = get_object_or_404(Skills, slug=skill_slug)
+    master = get_object_or_404(Master, id=master_id, skill=skill)
+    data = {
+        "title": master.name,
+        "skill": skill,
+        "master": master,
+    }
+    return render(request, "handyman/pages/master_pages/master.html", context=data)

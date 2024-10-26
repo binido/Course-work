@@ -1,30 +1,35 @@
-{% extends "base.html" %} {%block content %} 
-{% include "handyman/include/header.html" %}
+{% extends "base.html" %}
+{% block content %}
+    {% include "handyman/include/header.html" %}
 
-<div class="main-container">
-  <div class="main">
-    <div class="main-block">
-      <h2>{{skill}}</h2>
+    <div class="main-container">
+        <div class="main">
+            <div class="main-block">
+                <h2>{{ skill.cat_name }}</h2>
 
-      <div class="grid-block">
-        {% for master in masters %}
-        <div class="card" onclick="document.location.href='links/master.html'">
-          <img src="https://placehold.co/150x150" alt="" />
-          <div class="card-text">
-            <h3>{{ master.name }}</h3>
-            <ul>
-              <li>{{master.skill}}</li>
-              <li>От {{master.salary}} руб</li>
-              <li>Отценка: {{master.grade}}\10</li>
-            </ul>
-          </div>
+                <div class="grid-block">
+                    {% for master in masters %}
+                        <div class="card"
+                             onclick="document.location.href='{% url 'master_page' skill.slug master.id %}'">
+                            {% if master.image %}
+                                <img src="{{ master.image.url }}" alt="{{ master.name }}"/>
+                            {% else %}
+                                <img src="https://placehold.co/150x150" alt="Изображение отсутствует"/>
+                            {% endif %}
+                            <div class="card-text">
+                                <h3>{{ master.name }}</h3>
+                                <ul>
+                                    <li>{{ master.skill.name }}</li>
+                                    <li>Лет опыта: {{ master.experience }}</li>
+                                    <li>{{ master.workarea }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        {% endfor %}
-      </div>
     </div>
-  </div>
 
-  
-</div>
-{% include "handyman/include/footer.html" %} 
+    {% include "handyman/include/footer.html" %}
 {% endblock content %}

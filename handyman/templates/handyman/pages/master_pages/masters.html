@@ -1,47 +1,26 @@
-{% extends "base.html" %} {%block content %} 
-{% include "handyman/include/header.html" %}
+{% extends "base.html" %}
+{% block content %}
+    {% include "handyman/include/header.html" %}
 
-
-<div class="main-container">
-  <div class="main">
-    <div class="master-block">
-      <h2>Все мастера</h2>
-      <div class="master-grid">
-        <div class="card" onClick="document.location.href='{% url 'masters_type' 'Santehniki' %}'">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Сантехники</div>
+    <div class="main-container">
+        <div class="main">
+            <div class="master-block">
+                <h2>Все мастера</h2>
+                <div class="master-grid">
+                    {% for skill in skills %}
+                        <div class="card" onClick="document.location.href='{% url 'masters_type' skill.slug %}'">
+                            {% if skill.image %}
+                                <img src="{{ skill.image.url }}" alt="{{ skill.name }}"/>
+                            {% else %}
+                                <img src="https://placehold.co/200x150" alt="{{ skill.name }}"/>
+                            {% endif %}
+                            <div class="text">{{ skill.cat_name }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Плотрики</div>
-        </div>
-        <div class="card">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Электрики</div>
-        </div>
-        <div class="card">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Маляры</div>
-        </div>
-        <div class="card">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Слесари</div>
-        </div>
-        <div class="card">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Столяры</div>
-        </div>
-        <div class="card">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Мебельщики</div>
-        </div>
-        <div class="card">
-          <img src="https://placehold.co/200x150" alt="" />
-          <div class="text">Универсальные</div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
-{% include "handyman/include/footer.html" %} {% endblock content %}
+    {% include "handyman/include/footer.html" %}
+{% endblock content %}

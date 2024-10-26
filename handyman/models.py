@@ -26,6 +26,7 @@ class Skills(models.Model):
         max_length=100
     )  # Тоже что и name, но во множественном числе
     slug = models.CharField(max_length=100, unique=True)
+    image = models.ImageField(upload_to='skills/images', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
