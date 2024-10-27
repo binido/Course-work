@@ -1,6 +1,8 @@
 from django.db import models
 import uuid
 
+from django.urls import reverse
+
 
 class Master(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -14,6 +16,9 @@ class Master(models.Model):
     image = models.ImageField(upload_to='masters/images')
     experience = models.IntegerField(default=10)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse('master_page', args=[self.skill.slug, self.id])
 
     def get_status(self):
         if self.experience < 3:
