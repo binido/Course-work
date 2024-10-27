@@ -67,14 +67,13 @@ $transparent-white: rgba(255, 255, 255, 0.5)
         background-image: linear-gradient($translucent, $translucent)
         background-size: 100% 2px
 
-@mixin img($width, $height: none)
+@mixin img($width, $height: $width)
     width: $width
     object-fit: cover
     @if $height
         height: $height
-
     @else
-        height: $width
+        height: $height
 
 @mixin button($width, $height)
     width: $width

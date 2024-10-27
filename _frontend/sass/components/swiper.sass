@@ -1,12 +1,12 @@
-:root
-    --swiper-pagination-color: #333
+\:root
+    --swiper-pagination-color: #2c2a4d
 
 .slider-block
     width: 1000px
     height: 400px
 
     .swiper
-        @include border-radius(5px)
         .swiper-slide
             img
-                @include img(100%)
+                @include img(1000px, 400px)
+                @include border-radius(5px)
