@@ -11,9 +11,19 @@ class Master(models.Model):
     workarea = models.ForeignKey(
         to="Workarea", on_delete=models.PROTECT, blank=True, null=True
     )
-    image = models.ImageField(upload_to='masters/images', height_field=None, width_field=None, max_length=None)
+    image = models.ImageField(upload_to='masters/images')
     experience = models.IntegerField(default=10)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def get_status(self):
+        if self.experience < 3:
+            return "Новичок"
+        elif 3 <= self.experience < 7:
+            return "Мастер"
+        elif 7 <= self.experience < 15:
+            return "Опытный мастер"
+        else:
+            return "Эксперт"
 
     def __str__(self):
         return str(self.name)
@@ -40,3 +50,11 @@ class Workarea(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class PortfolioImage(models.Model):
+    master = models.ForeignKey(Master, related_name="portfolio_images", on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='masters/portfolio/')
+
+    def __str__(self):
+        return f"Image for {self.master.name}"

@@ -1,4 +1,75 @@
-<h1>{{ master.name }}</h1>
-<p>Категория: {{ skill.name }}</p>
-<img src="{{ master.image.url }}" alt="{{ master.name }}">
-<p>Опыт: {{ master.experience }} лет</p>
+{% extends "base.html" %}
+{% block content %}
+    {% include "handyman/include/header.html" %}
+
+    <div class="main-container">
+        <div class="main">
+            <div class="info-block">
+                {% if master.image %}
+                    <img src="{{ master.image.url }}" alt="{{ master.name }}"/>
+                {% else %}
+                    <img src="https://placehold.co/200x200" alt="Изображение отсутствует"/>
+                {% endif %}
+                <div class="info-text">
+                    <h1>{{ master.name }}</h1>
+                    <p><span>{{ master.skill.name }}</span></p>
+                    <p>Лет опыта: <span>{{ master.experience }}</span></p>
+                    <p>Район: <span>{{ master.workarea }}</span></p>
+                    <p>Статус: <span>{{ master.get_status }}</span></p>
+                </div>
+            </div>
+
+            <div class="info info-content">
+                <h1>Описание</h1>
+                <p>
+                    <span>Иван Иванович</span> — опытный мастер с более чем 10-летним
+                    стажем работы в сфере сантехники и электрики. Он специализируется на
+                    ремонте и установке водопроводных систем, устранении засоров,
+                    установке бытовой техники, а также на проведении электромонтажных
+                    работ любой сложности. Благодаря профессиональному подходу и высокой
+                    ответственности, Иван Иванович зарекомендовал себя как надежный и
+                    квалифицированный специалист.
+                </p>
+                <p>
+                    <span>Основные услуги:</span> Устранение протечек, замена и
+                    установка труб, Монтаж и ремонт сантехнических приборов (ванны,
+                    раковины, унитазы), Установка и замена электрической проводки,
+                    Подключение бытовой техники (стиральные машины, водонагреватели),
+                    Устранение неисправностей электросетей.
+                </p>
+                <p>
+                    <span>Иван Иванович</span> гарантирует качественное выполнение
+                    работы в кратчайшие сроки и предлагает доступные цены на услуги.
+                    Отзывы довольных клиентов подтверждают его профессионализм и
+                    ответственный подход к каждой задаче.
+                </p>
+            </div>
+
+            <div class="info info-content">
+                <h1>Портфолио</h1>
+                <div class="slider-block">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for image in master.portfolio_images.all %}
+                                <div class="swiper-slide">
+                                    <img src="{{ image.image.url }}" alt="Портфолио {{ master.name }}"
+                                    >
+                                </div>
+                            {% empty %}
+                                <p>Портфолио отсутствует</p>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <!-- Если у Swiper используются навигационные кнопки -->
+                        {#                        <div class="swiper-button-prev"></div>#}
+                        {#                        <div class="swiper-button-next"></div>#}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {% include "handyman/include/footer.html" %}
+{% endblock content %}
