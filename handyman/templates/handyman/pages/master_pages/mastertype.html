@@ -10,9 +10,9 @@
                 <div class="grid-block">
                     {% for master in masters %}
                         <div class="card"
-                             onclick="document.location.href='{% url 'master_page' skill.slug master.id %}'">
+                             onclick="document.location.href='{{ master.get_absolute_url }}'">
                             {% if master.image %}
-                                <img src="{{ master.image.url }}" alt="{{ master.name }}"/>
+                                <img src="{{ master.image.url }}" alt="{{ master.name }}" style="border-radius: 5px"/>
                             {% else %}
                                 <img src="https://placehold.co/150x150" alt="Изображение отсутствует"/>
                             {% endif %}
@@ -21,7 +21,7 @@
                                 <ul>
                                     <li>{{ master.skill.name }}</li>
                                     <li>Лет опыта: {{ master.experience }}</li>
-                                    <li>{{ master.workarea }}</li>
+                                    <li>Район: {{ master.workarea }}</li>
                                 </ul>
                             </div>
                         </div>
