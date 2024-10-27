@@ -1,6 +1,6 @@
 .footer-container
     @include container
-    margin-top: 60px
+    margin-top: max(60px, auto)
 
     .footer
         @include main-font
@@ -47,3 +47,13 @@
                 li
                     a
                         @include link(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9))
+
+// Фикс расстания между footer и низом экрана
+
+body
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+
+    .main-container
+        flex: 1
