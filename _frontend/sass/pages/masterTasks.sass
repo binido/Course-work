@@ -1,0 +1,45 @@
+.main-container
+    .main
+        &-tasks
+            padding-top: 60px
+
+            h1
+                color: $translucent
+                font-size: 24px
+                font-weight: 600
+
+            &-block
+                margin-top: 60px
+                display: flex
+                flex-direction: column
+                gap: 30px
+
+                &>h2
+                    color: $dark-blue
+                    font-size: 24px
+                    font-weight: 600
+                    text-align: center
+
+                &-list>ul
+                    display: grid
+                    grid-template-columns: repeat(3, 1fr)
+                    gap: 15px
+
+                    li
+                        @include shadow
+                        @include border-radius(5px)
+                        padding: 10px
+                        width: 270px
+                        display: flex
+                        flex-direction: column
+                        gap: 15px
+                        align-self: center
+                        justify-self: center
+
+                        h2
+                            color: $dark-blue
+                            font-size: 24px
+                            font-weight: 600
+
+                        button
+                            @include button(245px, 40px)

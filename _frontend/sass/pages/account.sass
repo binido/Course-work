@@ -5,6 +5,11 @@
             @include flex-center
             gap: 20px
 
+            .button-container
+                button
+                    @include button(350px, 50px)
+                    @include border-radius(5px)
+
             .account
                 @include shadow
                 @include border-radius(5px)
