@@ -110,6 +110,9 @@ $transparent-white: rgba(255, 255, 255, 0.5)
         &.text
             height: $height * 2
 
+    &[type='button']
+        @include button($width, $height)
+
 @mixin select
     width: 350px
     height: 50px

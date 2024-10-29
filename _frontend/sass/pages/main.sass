@@ -109,6 +109,38 @@
                     padding: 10px
                     display: flex
 
+                    &-delete
+                        @include shadow(false)
+                        @include border-radius(5px)
+                        color: $dark-grey
+                        padding: 10px
+                        display: flex
+                        flex-direction: column
+
+                        &-head
+                            display: flex
+                            gap: 20px
+
+                            &-text
+                                display: flex
+                                flex-direction: column
+                                
+                                ul
+                                    margin-top: auto
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 5px
+
+                        &-footer
+                            display: flex
+                            justify-content: center
+                            align-items: center
+
+                            button
+                                @include button(210px, 40px)
+                                @include border-radius(5px)
+                                margin-top: 10px
+
                     img
                         width: 100px
                         max-height: auto

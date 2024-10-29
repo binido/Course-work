@@ -14,6 +14,9 @@
                 flex-direction: column
                 gap: 30px
 
+                &:last-child
+                    margin-bottom: 40px
+
                 &>h2
                     color: $dark-blue
                     font-size: 24px
@@ -23,7 +26,7 @@
                 &-list>ul
                     display: grid
                     grid-template-columns: repeat(3, 1fr)
-                    gap: 15px
+                    gap: 40px
 
                     li
                         @include shadow
