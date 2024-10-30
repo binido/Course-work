@@ -1,6 +1,12 @@
-from django.shortcuts import get_object_or_404, render
-from . import models
+from django.shortcuts import get_object_or_404
 from .models import Master, Skills
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib import messages
+from .forms import UserRegisterForm
+
+from django.contrib.auth import logout
 
 
 def index(request):
@@ -52,3 +58,21 @@ def show_master(request, skill_slug, master_id):
         "master": master,
     }
     return render(request, "handyman/pages/master_pages/master.html", context=data)
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, 'Ваш аккаунт создан!')
+            return redirect('index')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+
+def custom_logout(request):
+    logout(request)
+    return redirect('index')
