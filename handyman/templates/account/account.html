@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "handyman/include/header.html" %}
+
+    <div class="main-container">
+        <div class="main">
+            <div class="account-container">
+                <div class="account">
+                    <h1>Личный кабинет</h1>
+                    <div class="image-block">
+                        <img src="https://placehold.co/150x150" alt="{{ title }}"/>
+                        <div class="image-text">
+                            <p>Размер для корректного отображения 512x512px</p>
+                            <button>Загрузить</button>
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="form-item">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" value="{{ user.email }}" id="email" disabled/>
+                        </div>
+                        <div class="form-item">
+                            <label for="login">Логин:</label>
+                            <input type="text" name="login" value="{{ user.username }}" id="login" disabled/>
+                        </div>
+                        <div class="form-item">
+                            <label for="rol">Роль:</label>
+                            <input type="text" name="phone" value="none" id="rol"/>
+                        </div>
+                        <input type="button" value="Изменить"/>
+                    </form>
+                </div>
+
+                <div class="account">
+                    <h1>Присоединяйтесь к команде Handyman!</h1>
+                    <br/>
+                    <p>
+                        Вы ищете работу, где сможете проявить свои навыки и стать частью
+                        дружного коллектива? Handyman приглашает вас присоединиться к
+                        нашей команде профессионалов!
+                    </p>
+                    <br/>
+                    <p>Мы ищем мастеров различных специальностей:</p>
+                    <ul>
+                        <li>Сантехники</li>
+                        <li>Электрики</li>
+                        <li>Столяры и плотники</li>
+                        <li>Слесари</li>
+                        <li>Мебельщики</li>
+                        <li>Маляры</li>
+                        <li>Универсальные мастера</li>
+                    </ul>
+                    <br/>
+                    <p>
+                        Если вы обладаете опытом в одной из этих областей, цените качество
+                        работы и хотите развиваться в стабильной компании, мы будем рады
+                        видеть вас в нашей команде! Заполните форму ниже, чтобы подать
+                        заявку и начать новый этап своей карьеры с Handyman. Мы ждем
+                        именно вас!
+                    </p>
+                    <button type="button" onclick="document.location.href='apply.html'">Подать заявку</button>
+                </div>
+
+                <div class="button-container">
+                    <button type="button" onclick="document.location.href='./accountPages/masterTasks.html'">Взять
+                        заказ
+                    </button>
+                </div>
+
+                <div class="button-container">
+                    <button type="button">Админ панель</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "handyman/include/footer.html" %}
+{% endblock %}

@@ -76,3 +76,11 @@ def register(request):
 def custom_logout(request):
     logout(request)
     return redirect('index')
+
+
+def account(request):
+    user = request.user
+    data = {"title": 'Личный кабинет',
+            'user': user}
+
+    return render(request, 'account/account.html', context=data)

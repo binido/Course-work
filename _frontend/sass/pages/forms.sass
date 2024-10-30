@@ -1,8 +1,9 @@
 .form-container
     width: 100svw
     height: 100svh
+    @include main-font
 
-    form
+    .form
         @include center
         @include main-font
         display: flex
@@ -12,24 +13,22 @@
         select
             @include select
 
-
-
         h1
             font-size: 36px
             font-weight: 700
             color: $dark-blue
             align-self: center
 
-        input
-            @include input(350px, 50px)
+        // input
+        //     @include input(350px, 50px)
 
-
-            &[type='button']
-                @include button(350px, 50px)
+        //     &[type='button']
+        //         @include button(350px, 50px)
 
         .link-block
             display: flex
             justify-content: space-between
+            margin-bottom: 15px
 
             a
                 @include link($dark-blue)
