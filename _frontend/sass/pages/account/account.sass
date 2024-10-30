@@ -30,6 +30,7 @@
                     img
                         @include img(150px)
                         @include border-radius(5px)
+                        border: 2px solid $light-grey
 
                     .image-text
                         display: flex
@@ -56,13 +57,13 @@
                     justify-content: center
                     grid-template-columns: 1fr 1fr
 
-                    input
-                        &[type='text'], &[type='password'], &[type='tel']
-                            @include input(350px, 50px)
+                    // input
+                    //     &[type='text'], &[type='password'], &[type='tel']
+                    //         @include input(350px, 50px)
 
-                        &[type='button']
-                            @include button(350px, 50px)
-                            @include border-radius(5px)
+                    //     &[type='button']
+                    //         @include button(350px, 50px)
+                    //         @include border-radius(5px)
 
                 &>ul
                     display: flex

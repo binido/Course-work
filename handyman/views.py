@@ -84,3 +84,19 @@ def account(request):
             'user': user}
 
     return render(request, 'account/account.html', context=data)
+
+
+def adminPanel(request):
+    data = {
+        'title': 'Админка'
+    }
+
+    return render(request, 'account/adminpanel.html', context=data)
+
+
+def masterTasks(request):
+    data = {
+        'title': 'Заказы'
+    }
+
+    return render(request, 'account/mastetasks.html', context=data)

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "handyman/include/header.html" %}
+
+    <!-- main -->
+
+    <div class="main-container">
+        <div class="main">
+            <!-- form -->
+            <div class="create-form">
+                <h2>Создать мастера</h2>
+                <form action="">
+                    <div class="form-grid">
+                        <input type="text" placeholder="Имя"/>
+                        <input type="text" placeholder="Опыт"/>
+
+                        <select name="" id="" form="form">
+                            <option value="" selected disabled>Специальность</option>
+                            <option value="">Сантехник</option>
+                            <option value="">Электрик</option>
+                            <option value="">Столяр</option>
+                            <option value="">Плотник</option>
+                            <option value="">Слесарь</option>
+                            <option value="">Мебельщик</option>
+                            <option value="">Маляр</option>
+                            <option value="">Универсальный</option>
+                        </select>
+                        <!-- <input type="file" placeholder="Фото мастера" /> -->
+                        <label class="file-label" for="file-upload-photo"
+                        >Фото мастера</label
+                        >
+                        <input type="file" id="file-upload-photo"/>
+
+                        <!-- TODO: изменить file формат -->
+
+                        <select name="" id="" form="form">
+                            <option value="" selected disabled>Район</option>
+                            <option value="">Кировский</option>
+                            <option value="">Самарский</option>
+                            <option value="">Октябрьский</option>
+                            <option value="">Красноглинский</option>
+                        </select>
+                        <!-- <input type="file" placeholder="Портфолио" /> -->
+                        <label class="file-label" for="file-upload-portfolio"
+                        >Портфолио</label
+                        >
+                        <input type="file" id="file-upload-portfolio"/>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="Добавить"/>
+                    </div>
+                </form>
+            </div>
+            <!-- form -->
+            <!-- delete -->
+            <div class="delete">
+                <h2>Удалить мастера категории</h2>
+                <div class="delete-buttons">
+                    <button type="button" onclick="location.href='./deletemaster.html'">Сантехники</button>
+                    <button type="button">Столяры</button>
+                    <button type="button">Плотники</button>
+                    <button type="button">Слесари</button>
+                    <button type="button">Электрики</button>
+                    <button type="button">Мебельшики</button>
+                    <button type="button">Маляры</button>
+                    <button type="button">Универсальные</button>
+                </div>
+            </div>
+            <!-- delete -->
+        </div>
+    </div>
+
+    <!-- main  -->
+
+    {% include "handyman/include/footer.html" %}
+{% endblock %}

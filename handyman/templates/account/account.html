@@ -21,10 +21,6 @@
                         {% else %}
                             <img src="{% static 'handyman/img/account/user.png' %}" alt="{{ title }}"/>
                         {% endif %}
-                        {#                        <div class="image-text">#}
-                        {#                            <p>Размер для корректного отображения 512x512px</p>#}
-                        {#                            <button>Загрузить</button>#}
-                        {#                        </div>#}
                     </div>
 
                     <form action="">
@@ -44,7 +40,8 @@
                                     {% else %}
                                     Нет ролей
                                     {% endif %}"
-                                    id="rol"/>
+                                    id="rol"
+                            disabled/>
                         </div>
                         <input type="button" value="Выйти" onclick="document.location.href='{% url 'logout' %}'"/>
                     </form>
@@ -82,7 +79,7 @@
 
                 <div class="button-container">
                     {% if user|is_in_group:"master" %}
-                        <button type="button" onclick="document.location.href='./accountPages/masterTasks.html'">Взять
+                        <button type="button" onclick="document.location.href='{% url 'tasks' %}'">Взять
                             заказ
                         </button>
                     {% endif %}
@@ -90,7 +87,7 @@
 
                 <div class="button-container">
                     {% if user|is_in_group:"admin" %}
-                        <button type="button">Админ панель</button>
+                        <button type="button" onclick="document.location.href='{% url 'adminpanel' %}'">Админ панель</button>
                     {% endif %}
                 </div>
 
