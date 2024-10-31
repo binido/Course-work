@@ -63,3 +63,31 @@ class PortfolioImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.master.name}"
+
+
+class MasterTasks(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Ожидает выполнения'),
+        ('in_progress', 'Выполняется'),
+        ('completed', 'Выполнено'),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    master_type = models.ForeignKey('Skills', on_delete=models.PROTECT)
+    client_name = models.CharField(max_length=100)
+    client_tel = models.CharField(max_length=100)
+    client_adders = models.CharField(max_length=100)
+
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='pending',
+    )
+
+    def set_in_progress(self):
+        self.status = 'in_progress'
+        self.save()
+
+    def set_completed(self):
+        self.status = 'completed'
+        self.save()

@@ -1,0 +1,16 @@
+<!-- templates/tasks/create_task.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать задачу</title>
+</head>
+<body>
+    <h1>Создать задачу для мастера</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

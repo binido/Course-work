@@ -1,7 +1,7 @@
-# forms.py
 from django import forms
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.forms import UserCreationForm
+from handyman.models import MasterTasks
 
 
 class UserRegisterForm(UserCreationForm):
@@ -14,7 +14,12 @@ class UserRegisterForm(UserCreationForm):
     def save(self, commit=True):
         user = super().save(commit=commit)
         if commit:
-            # Назначаем группу "Обычные пользователи"
             normal_user_group = Group.objects.get(name='user')
             user.groups.add(normal_user_group)
         return user
+
+
+class MasterTasksForm(forms.ModelForm):
+    class Meta:
+        model = MasterTasks
+        fields = ['master_type', 'client_name', 'client_tel', 'client_adders']

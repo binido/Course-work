@@ -4,7 +4,7 @@ from .models import Master, Skills
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, MasterTasksForm
 
 from django.contrib.auth import logout
 
@@ -100,3 +100,17 @@ def masterTasks(request):
     }
 
     return render(request, 'account/mastetasks.html', context=data)
+
+
+def add_task(request):
+    if request.method == 'POST':
+        form = MasterTasksForm(request.POST)
+        if form.is_valid():
+            task = form.save(commit=False)
+            task.status = "Ожидает выполнения"
+            task.save()
+            return redirect('index')
+    else:
+        form = MasterTasksForm()
+
+    return render(request, 'handyman/pages/task_pages/tasks.html', {'form': form})
