@@ -91,3 +91,13 @@ class MasterTasks(models.Model):
     def set_completed(self):
         self.status = 'completed'
         self.save()
+
+
+class Feedbacks(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=100)
+    feedback = models.TextField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Feedbacks for {self.name}"

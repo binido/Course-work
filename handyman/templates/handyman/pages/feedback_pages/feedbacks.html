@@ -1,45 +1,71 @@
-{% extends "base.html" %} {% block content %} {% comment %}
--------------------------------------------------------------- {% endcomment %}
-{% include "handyman/include/header.html" %}
+{% extends "base.html" %}
+{% load custom_filters %}
+{% load static %}
+{% block content %}
+    {% include "handyman/include/header.html" %}
 
-<div class="main-container">
-  <div class="main">
-    <div class="feedbacks">
-      <div class="feedbacks-info">
-        <h1>Отзывы</h1>
-        <p>
-          Вы можете оставить отзыв о мастере и рассказать впечатление о
-          проделанной работе
-        </p>
-        <button type="button" onclick="location.href='feedback.html'">
-          Оставить отзыв
-        </button>
-      </div>
+    <!-- main -->
+    <div class="main-container">
+        <div class="main">
+            <div class="feedback">
+                <!-- info block -->
+                <div class="feedback-info">
+                    <h1>Отзывы</h1>
+                    <div class="text">
+                        <p>Здесь вы можете оставить отзыв о нашей компании, чтобы мы смогли улучшить наш сервис</p>
+                        {% if user.is_authenticated %}
+                            {% if user|is_in_group:"user" %}
+                                <button type="button" onclick="location.href='{% url 'add_feedback' %}'">Оставить отзыв
+                                </button>
+                            {% else %}
+                                <p class="error">Отзывы могут оставлять только пользователи</p>
+                                <button type="button" disabled>Оставить отзыв
+                                </button>
+                            {% endif %}
 
-      <div class="feedbacks-list">
-        {% comment %} List item {% endcomment %}
-        {% for feedback in feedbacks %}
+                        {% else %}
+                            <p class="error">Отзывы могут оставлять только зарегистрированные пользователи</p>
+                        {% endif %}
 
-        <div class="feedbacks-list-item">
-          <img src="https://placehold.co/100x100" alt="" />
-          <div class="feedbacks-list-item-text">
-            <div class="feedbacks-list-item-text-header">
-              {% comment %} <h2>{{feedback.name}}</h2> {% endcomment %}
-              <h2>{{feedback.value}}/10</h2>
+
+                    </div>
+                </div>
+                <!-- info block -->
+
+                <!-- feedback block -->
+                <ul>
+                    {% for feedback in feedback_list %}
+                        <li>
+                            <div class="feedback-head">
+                                <img src="{% static 'handyman/img/account/user.png' %}" alt="{{ feedback.name }}"/>
+                                <div class="userinfo">
+                                    <h2>{{ feedback.name }}</h2>
+                                    <p>{{ feedback.created_at|date:"H:i d.m.Y" }}</p>
+                                </div>
+                            </div>
+                            <div class="feedback-body">
+                                <p>{{ feedback.feedback }}</p>
+                            </div>
+                            {% if user|is_in_group:"admin" %}
+                                <div class="feedback-foot">
+                                <form action="{% url 'delete_feedback' feedback.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Удалить</button>
+                                </form>
+                            </div>
+                            {% endif %}
+                            
+
+                        </li>
+                    {% empty %}
+                        <p>Пока нет отзывов</p>
+                    {% endfor %}
+                </ul>
+                <!-- feedback block -->
             </div>
-            <div class="feedbacks-list-item-text-footer">
-              <p>
-                {{feedback.text}}
-              </p>
-            </div>
-          </div>
         </div>
-
-        {% endfor %}
-        {% comment %} List item {% endcomment %}
-      </div>
     </div>
-  </div>
-</div>
+    <!-- main -->
 
-{% include "handyman/include/footer.html" %} {% endblock content %}
+    {% include "handyman/include/footer.html" %}
+{% endblock content %}

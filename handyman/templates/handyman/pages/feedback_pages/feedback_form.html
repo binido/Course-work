@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="form-container">
+        <div class="form">
+            <h1>Отзыв</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-item">
+                    <label for="username">Ваше имя</label>
+                    <input type="text" id="username" value="{{ request.user.username }}" disabled/>
+                </div>
+                {% if form.name.errors %}
+                    <div class="form-error">
+                        <p>{{ form.name.errors }}</p>
+                    </div>
+                {% endif %}
+
+                <div class="form-item">
+                    <label for="feedback">Отзыв</label>
+                    {{ form.feedback }}
+                </div>
+                {% if form.feedback.errors %}
+                    <div class="form-error">
+                        <p>{{ form.feedback.errors }}</p>
+                    </div>
+                {% endif %}
+
+                <input type="submit" value="Отправить"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}
