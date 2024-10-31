@@ -1,67 +1,76 @@
-.main-container
-    .main
-        .feedbacks
+.feedback
+    margin-top: 60px
+    display: flex
+    flex-direction: column
+
+    &-info
+        h1
+            font-size: 24px
+            color: $translucent
+
+        .text
+            margin-top: 30px
+            text-align: right
             display: flex
             flex-direction: column
-            margin-top: 40px
+            gap: 10px
+            font-size: 20px
 
-            &-info
-                display: flex
-                flex-direction: column
-                gap: 20px
+            p
+                max-width: 700px
+                align-self: flex-end
 
-                h1
-                    font-size: 24px
+                &.error
+                    color: red
                     font-weight: 600
-                    color: $translucent
 
-                p
-                    font-size: 20px
-                    width: 700px
+            button
+                @include button(350px, 50px)
+                align-self: flex-start
+
+    ul
+        margin-top: 60px
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 20px
+
+        li
+            padding: 10px
+            @include shadow(False)
+            @include border-radius(5px)
+            display: flex
+            flex-direction: column
+            gap: 10px
+            min-width: 300px 
+
+            .feedback-head
+                display: flex
+                gap: 15px
+
+                img
+                    @include img(50px, 50px)
+                    @include border-radius(5px)
+
+                .userinfo
+                    display: flex
+                    flex-direction: column
+                    width: 100%
+
+                    h2
+                        font-weight: 600
+
+                    p
+                        align-self: flex-end
+                        margin-top: auto
+                        color: $translucent
+
+            .feedback-body
+                flex: 1
+
+            .feedback-foot
+                display: flex
+                align-items: center
+                justify-content: center
 
                 button
-                    @include button(350px, 50px)
-                    @include border-radius(5px)
-                    align-self: flex-end
-
-            &-list
-                margin-top: 20px
-                display: flex
-                flex-direction: column
-                gap: 30px
-
-                &-item
-                    display: flex
-                    flex-direction: row
-                    gap: 20px
-                    padding: 10px
-                    @include shadow
-                    @include border-radius(5px)
-                    max-width: 1000px
-
-                    img
-                        @include img(100px, 100px)
-
-                    &-text
-                        display: flex
-                        flex-direction: column
-                        gap: 10px
-
-                        &-header
-                            display: flex
-                            flex-direction: row
-                            // justify-content: space-between
-                            align-items: center
-
-                            h2
-                                font-size: 20px
-                                font-weight: 600
-                                color: $dark-blue
-
-                                &:last-child
-                                    margin-left: auto
-
-                        &-footer
-                            p
-                                font-size: 16px
-                                color: $translucent
+                    @include button(300px, 40px)

@@ -71,7 +71,7 @@ def register(request):
             return redirect('index')
     else:
         form = UserRegisterForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'registration/register.html', {'form': form, 'title': 'Регистрация'})
 
 
 def custom_logout(request):
