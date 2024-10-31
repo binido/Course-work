@@ -1,5 +1,6 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import get_object_or_404
-from .models import Master, Skills
+from .models import Master, Skills, MasterTasks
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
@@ -95,8 +96,15 @@ def adminPanel(request):
 
 
 def masterTasks(request):
+    tasks_not_taken = MasterTasks.objects.filter(status='pending')
+    tasks_in_progress = MasterTasks.objects.filter(status='in_progress')
+    tasks_completed = MasterTasks.objects.filter(status='completed')
+
     data = {
-        'title': 'Заказы'
+        'title': 'Заказы',
+        'tasks_not_taken': tasks_not_taken,
+        'tasks_in_progress': tasks_in_progress,
+        'tasks_completed': tasks_completed,
     }
 
     return render(request, 'account/mastetasks.html', context=data)
@@ -107,10 +115,39 @@ def add_task(request):
         form = MasterTasksForm(request.POST)
         if form.is_valid():
             task = form.save(commit=False)
-            task.status = "Ожидает выполнения"
+            task.status = 'pending'
             task.save()
             return redirect('index')
     else:
         form = MasterTasksForm()
 
-    return render(request, 'handyman/pages/task_pages/tasks.html', {'form': form})
+    return render(request, 'handyman/pages/task_pages/tasks.html', {'form': form, 'title': 'Вызвать мастера'})
+
+
+def is_master(user):
+    return user.groups.filter(name='master').exists()
+
+
+def is_admin(user):
+    return user.groups.filter(name='admin').exists()
+
+
+@user_passes_test(is_master)
+def take_task(request, task_id):
+    task = get_object_or_404(MasterTasks, id=task_id)
+    task.set_in_progress()
+    return redirect('tasks')
+
+
+@user_passes_test(is_master)
+def complete_task(request, task_id):
+    task = get_object_or_404(MasterTasks, id=task_id)
+    task.set_completed()
+    return redirect('tasks')
+
+
+@user_passes_test(is_admin)
+def delete_task(request, task_id):
+    task = get_object_or_404(MasterTasks, id=task_id)
+    task.delete()
+    return redirect('tasks')

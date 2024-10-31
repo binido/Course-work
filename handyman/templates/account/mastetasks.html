@@ -1,114 +1,82 @@
 {% extends "base.html" %}
+{% load custom_filters %}
 
 {% block content %}
     {% include "handyman/include/header.html" %}
 
     <!-- main -->
-
     <div class="main-container">
         <div class="main">
             <div class="main-tasks">
                 <h1>Заказы</h1>
-                <!-- main-tasks-block -->
+
+                <!-- Блок "Не взяты" -->
                 <div class="main-tasks-block">
                     <h2>Не взяты</h2>
                     <div class="main-tasks-block-list">
                         <ul>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Взять</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Взять</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Взять</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Взять</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Взять</button>
-                            </li>
+                            {% for task in tasks_not_taken %}
+                                <li>
+                                    <h2>{{ task.master_type }}</h2>
+                                    <p>Клиент: {{ task.client_name }}</p>
+                                    <p>Номер: {{ task.client_tel }}</p>
+                                    <p>{{ task.client_adders }}</p>
+                                    <button type="button"
+                                            onclick="document.location.href='{% url 'take_task' task.id %}'">Взять
+                                    </button>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
-                <!-- main-tasks-block -->
 
-                <!-- main-tasks-block -->
+                <!-- Блок "Исполняются" -->
                 <div class="main-tasks-block">
                     <h2>Исполняются</h2>
                     <div class="main-tasks-block-list">
                         <ul>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Закрыть</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Закрыть</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Закрыть</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Закрыть</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Закрыть</button>
-                            </li>
-                            <li>
-                                <h2>Слесарь</h2>
-                                <p>Клиент: Иванов Иван</p>
-                                <p>Номер: +7(999)999-99-99</p>
-                                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                                <button type="button">Закрыть</button>
-                            </li>
+                            {% for task in tasks_in_progress %}
+                                <li>
+                                    <h2>{{ task.master_type }}</h2>
+                                    <p>Клиент: {{ task.client_name }}</p>
+                                    <p>Номер: {{ task.client_tel }}</p>
+                                    <p>{{ task.client_adders }}</p>
+                                    <button type="button"
+                                            onclick="document.location.href='{% url 'complete_task' task.id %}'">Завершить
+                                    </button>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
-                <!-- main-tasks-block -->
+
+                <!-- Блок "Выполнены" -->
+                <div class="main-tasks-block">
+                    <h2>Выполнены</h2>
+                    <div class="main-tasks-block-list">
+                        <ul>
+                            {% for task in tasks_completed %}
+                                <li>
+                                    <h2>{{ task.master_type }}</h2>
+                                    <p>Клиент: {{ task.client_name }}</p>
+                                    <p>Номер: {{ task.client_tel }}</p>
+                                    <p>{{ task.client_adders }}</p>
+                                    {% if user|is_in_group:"admin" %}
+                                        <button type="button"
+                                                onclick="document.location.href='{% url 'delete_task' task.id %}'">Удалить
+                                        </button>
+                                    {% else %}
+                                        <button type="button" disabled>Удалить</button>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-
     <!-- main -->
 
     {% include "handyman/include/footer.html" %}

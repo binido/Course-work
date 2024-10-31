@@ -17,5 +17,8 @@ urlpatterns = [
     path('account/adminpanel/', views.adminPanel, name='adminpanel'),
     path('account/tasks/', views.masterTasks, name='tasks'),
     path('add_task/', views.add_task, name='add_task'),
+    path('task/take/<uuid:task_id>/', views.take_task, name='take_task'),
+    path('task/complete/<uuid:task_id>/', views.complete_task, name='complete_task'),
+    path('task/delete/<uuid:task_id>/', views.delete_task, name='delete_task'),
 
 ]

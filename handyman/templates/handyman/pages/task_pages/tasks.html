@@ -1,16 +1,63 @@
-<!-- templates/tasks/create_task.html -->
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Создать задачу</title>
-</head>
-<body>
-    <h1>Создать задачу для мастера</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Отправить</button>
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <div class="form-container">
+        <div class="form">
+            <h1>Вызвать мастера</h1>
+            <form method="post" action="{% url 'add_task' %}">
+                {% csrf_token %}
+                <!-- Тип мастера -->
+                <div class="form-item">
+                    <label for="select">Тип мастера</label>
+                    <select name="master_type" id="select">
+                        <option value="" disabled selected>Не выбрано</option>
+                        {% for skill in form.master_type.field.queryset %}
+                            <option value="{{ skill.id }}"
+                                    {% if form.master_type.value == skill.id %}selected{% endif %}>{{ skill.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-error">
+                    {% if form.master_type.errors %}
+                        <p>{{ form.master_type.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                <!-- Ваше имя -->
+                <div class="form-item">
+                    <label for="username">Ваше имя</label>
+                    <input type="text" name="client_name" id="username"
+                           value="{{ form.client_name.value|default:'' }}"/>
+                </div>
+                <div class="form-error">
+                    {% if form.client_name.errors %}
+                        <p>{{ form.client_name.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                <!-- Номер -->
+                <div class="form-item">
+                    <label for="tel">Номер</label>
+                    <input type="tel" name="client_tel" id="tel" value="{{ form.client_tel.value|default:'' }}"/>
+                </div>
+                <div class="form-error">
+                    {% if form.client_tel.errors %}
+                        <p>{{ form.client_tel.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                <!-- Адрес -->
+                <div class="form-item">
+                    <label for="addres">Адрес</label>
+                    <input type="text" name="client_adders" id="addres"
+                           value="{{ form.client_adders.value|default:'' }}"/>
+                </div>
+                <div class="form-error">
+                    {% if form.client_adders.errors %}
+                        <p>{{ form.client_adders.errors.0 }}</p>
+                    {% endif %}
+                </div>
+                <!-- Кнопка отправки -->
+                <input type="submit" value="Вызвать"/>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock content %}
