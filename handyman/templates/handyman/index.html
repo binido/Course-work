@@ -1,77 +1,110 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
+{% load custom_filters %}
+{% load static %}
+
 {% block content %}
 
-{% include "handyman/include/header.html" %}
+    {% include "handyman/include/header.html" %}
 
-  <div class="main-container">
-    <div class="main">
-      <div class="main-slider">
-        <h2>
-          <span>Handyman</span> - Ваш надежный помощник по вызову мастера на
-          дом
-        </h2>
-        <div class="slider-block">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
-              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
-              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+    <div class="main-container">
+        <div class="main">
+            <div class="main-slider">
+                <h2>
+                    <span>Handyman</span> - Ваш надежный помощник по вызову мастера на
+                    дом
+                </h2>
+                <div class="slider-block">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+                            <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+                            <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
             </div>
-            <div class="swiper-pagination"></div>
 
-            <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
+            <div class="main-banner">
+                <h1>+7(999)999-99-99 - Звоните круглосуточно!!!</h1>
+                <p>Позвоните и наш менеджер поможет определиться с мастером или оставьте заявку на сайте и вам
+                    перезвонит сам
+                    мастер!!</p>
 
-          </div>
+
+
+                {% if user.is_authenticated %}
+                    {% if user|is_in_group:"user" %}
+                        <button type="button" onclick="location.href='{% url 'add_task' %}'">
+                            Вызвать
+                        </button>
+                    {% else %}
+                        <p class="error">
+                            Вызвать мастера могут только пользователи
+                        </p>
+
+                        <button type="button" disabled>
+                            Вызвать
+                        </button>
+                    {% endif %}
+
+                {% else %}
+                    <p class="error">
+                        Вызвать мастера могут только зарегестрированные пользователи
+                    </p>
+                    <button type="button" disabled>
+                        Вызвать
+                    </button>
+
+                {% endif %}
+            </div>
+
+
+            <div class="main-text">
+                <p>
+                    Добро пожаловать в Handyman! Мы предлагаем широкий спектр услуг по
+                    вызову мастеров на дом, чтобы решить любые ваши бытовые проблемы.</p>
+                <p>
+                    Наша команда профессионалов включает:</p>
+                <ul>
+                    <li><span>Сантехники</span>: быстро устранят
+                        протечки и установят новое оборудование.
+                    </li>
+                    <li><span>Электрики</span>: обеспечат
+                        безопасность и комфорт с качественным ремонтом электропроводки.
+                    </li>
+                    <li><span>Столяры и плотники</span>: создадут уникальные изделия на заказ и
+                        выполнят любые работы с деревом.
+                    </li>
+                    <li><span>Слесари</span>: помогут с ремонтом и
+                        обслуживанием металлических конструкций.
+                    </li>
+                    <li><span>Мебельщики</span>: соберут и
+                        отремонтируют вашу мебель, сделают ее функциональной и красивой.
+                    </li>
+                    <li><span>Маляры</span>: преобразят ваш интерьер с помощью качественной покраски и
+                        отделки.
+                    </li>
+                    <li><span>Универсальные мастера</span>: решат множество задач, от мелкого
+                        ремонта до комплексных проектов.
+                    </li>
+                </ul>
+
+                <br>
+                <p>
+                    Мы гарантируем высокое качество
+                    услуг, оперативность и индивидуальный подход к каждому клиенту.
+                    Обратитесь к нам, и мы сделаем ваш дом комфортнее!
+                </p>
+                <br><br>
+                <button type="button" onclick="location.href='{% url 'masters' %}'">
+                    Все наши мастера
+                </button>
+            </div>
+
+
         </div>
-      </div>
-
-      <div class="main-banner">
-        <h1>+7(999)999-99-99 - Звоните круглосуточно!!!</h1>
-        <p>Позвоните и наш менеджер поможет определиться с мастером или оставьте заявку на сайте и вам перезвонит сам
-          мастер!!</p>
-        <button type="button" onclick="location.href='{% url 'add_task' %}'">
-          Вызвать
-        </button>
-      </div>
-
-
-      <div class="main-text">
-        <p>
-          Добро пожаловать в Handyman! Мы предлагаем широкий спектр услуг по
-          вызову мастеров на дом, чтобы решить любые ваши бытовые проблемы. <br><br>
-          Наша команда профессионалов включает:
-        <ul>
-          <li><span>Сантехники</span>: быстро устранят
-            протечки и установят новое оборудование.</li>
-          <li><span>Электрики</span>: обеспечат
-            безопасность и комфорт с качественным ремонтом электропроводки.</li>
-          <li><span>Столяры и плотники</span>: создадут уникальные изделия на заказ и
-            выполнят любые работы с деревом.</li>
-          <li><span>Слесари</span>: помогут с ремонтом и
-            обслуживанием металлических конструкций.</li>
-          <li><span>Мебельщики</span>: соберут и
-            отремонтируют вашу мебель, сделают ее функциональной и красивой.</li>
-          <li><span>Маляры</span>: преобразят ваш интерьер с помощью качественной покраски и
-            отделки. </li>
-          <li><span>Универсальные мастера</span>: решат множество задач, от мелкого
-            ремонта до комплексных проектов.</li>
-        </ul>
-
-        <br>
-        Мы гарантируем высокое качество
-        услуг, оперативность и индивидуальный подход к каждому клиенту.
-        Обратитесь к нам, и мы сделаем ваш дом комфортнее!
-        </p>
-
-        <button type="button" onclick="location.href='{% url 'masters' %}'">
-          Все наши мастера
-        </button>
-      </div>
-
-
     </div>
-  </div>
 
-    {% include "handyman/include/footer.html" %} 
-    {% endblock content %}
+    {% include "handyman/include/footer.html" %}
+{% endblock content %}

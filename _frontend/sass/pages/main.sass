@@ -43,6 +43,9 @@
                 width: 550px
                 color: $translucent
 
+                &.error
+                    color: red
+
             button
                 @include button(350px, 50px)
                 @include border-radius(5px)
@@ -120,6 +123,10 @@
                         &-head
                             display: flex
                             gap: 20px
+
+                            img
+                                @include img(100px, 100px)
+                                @include border-radius(5px)
 
                             &-text
                                 display: flex

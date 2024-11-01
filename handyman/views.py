@@ -127,6 +127,7 @@ def delete_master(request, skill_slug, master_id):
     return redirect('adminpanel')
 
 
+@user_passes_test(is_admin)
 def add_master(request, skill_slug):
     skill = get_object_or_404(Skills, slug=skill_slug)
     if request.method == 'POST':
@@ -158,7 +159,7 @@ def masterTasks(request):
     return render(request, 'account/mastetasks.html', context=data)
 
 
-# TODO: сделать на главной странице вызов мастера только для зарегестрированных
+@login_required
 def add_task(request):
     if request.method == 'POST':
         form = MasterTasksForm(request.POST)
