@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../../img/Logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>Создать мастера | HandyMan</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form">
+        <h1>Создать мастера</h1>
+        <form action="">
+          <!-- item -->
+          <div class="form-item">
+            <label for="username">Имя</label>
+            <input type="text" id="username" placeholder="Иванов И.И."/>
+          </div>
+          <div class="form-error">
+            <p>ошибки имени тут</p>
+          </div>
+          <!-- item -->
+          <!-- item -->
+          <div class="form-item">
+            <label for="ex">Опыт</label>
+            <input type="number" id="ex" min="0"/>
+          </div>
+          <div class="form-error">
+            <p>ошибки опыта тут</p>
+          </div>
+          <!-- item -->
+
+          <!-- select -->
+          <div class="form-item">
+            <label for="workarea">Район</label>
+            <select name="" id="workarea">
+              <option value="" disabled selected>Не выбрано</option>
+              <option value="Кировский">Кировский</option>
+              <!-- все остальные мастер workarea -->
+            </select>
+          </div>
+          <div class="form-error">
+            <p>ошибки workarea тут</p>
+          </div>
+          <!-- select -->
+          <!-- file -->
+          <div class="form-file">
+            <label for="image">Изображение</label>
+            <input type="file" name="" id="image" />
+          </div>
+          <div class="form-error">
+            <p>ошибки avatar тут</p>
+          </div>
+          <!-- file -->
+          <!-- file -->
+          <div class="form-file">
+            <label for="portfolio">Портфолио</label>
+            <input type="file" name="" id="portfolio" multiple />
+          </div>
+          <div class="form-error">
+            <p>ошибки portfolio тут</p>
+          </div>
+          <!-- file -->
+          <input type="submit" value="Создать" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

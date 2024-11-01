@@ -1,74 +1,30 @@
 .main-container
     .main
-        .create-form
-            margin: 60px auto 0
-            width: 750px
-
-            h2
-                font-size: 36px
-                font-weight: 700
-                text-align: center
-                color: $dark-blue
-
-            form
-                margin-top: 20px
-
-                .form-grid
-                    display: grid
-                    gap: 20px
-                    grid-template-columns: 1fr 1fr
-
-                    input
-                        @include input(350px, 50px)
-
-                        &[type='file']
-                            display: none // Скрываем стандартный инпут
-
-                    select
-                        @include select
-
-                    // Стили для кастомного label
-                    .file-label
-                        display: inline-block
-                        padding: 15px 15px
-                        background-color: $dark-blue
-                        color: #fff
-                        font-weight: 600
-                        text-align: center
-                        cursor: pointer
-                        width: 350px 
-                        font-size: 16px
-                        text-align: left
-                        box-sizing: border-box
-
-                        &:hover
-                            background-color: #555 // Цвет при наведении
-
-                .button
-                    display: flex
-                    width: 100%
-                    justify-content: center
-                    margin-top: 20px
-
-                    input
-                        @include input(350px, 50px)
-
-        .delete
+        .admin
             margin-top: 60px
 
-            h2
-                font-size: 24px
-                font-weight: 600
-                color: $translucent
+            h1
                 text-align: center
+                font-size: 32px
+                font-weight: 600
+                color: $dark-blue
 
-            &-buttons
-                display: grid
-                grid-template-columns: 350px 350px
-                margin-top: 50px
-                gap: 15px
-                justify-content: center
+            .admin-item
+                margin-top: 60px
 
-                button
-                    @include button(350px, 50px)
-                    @include border-radius(5px)
+                h2
+                    font-size: 24px
+                    font-weight: 600
+                    color: $translucent
+                    text-align: center
+
+                .admin-buttons
+                    display: grid
+                    grid-template-columns: 350px 350px
+                    margin-top: 50px
+                    gap: 15px
+                    justify-content: center
+
+                    button
+                        @include button(350px, 50px)
+                        @include border-radius(5px)
