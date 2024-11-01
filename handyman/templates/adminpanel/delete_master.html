@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "handyman/include/header.html" %}
+
+    <!-- main -->
+
+    <div class="main-container">
+        <div class="main">
+            <div class="main-block">
+                <h2>Удалить мастера категории - {{ skill.name }}</h2>
+
+                <div class="grid-block">
+                    {% for master in masters %}
+                        <!-- item -->
+                        <div class="card-delete">
+                            <div class="card-delete-head">
+                                <img src="https://placehold.co/100x100" alt=""/>
+                                <div class="card-delete-head-text">
+                                    <h2>{{ master.name }}</h2>
+                                    <ul>
+                                        <li>Слесарь</li>
+                                        <li>Лет опыта: {{ master.experience }}</li>
+                                        <li>{{ master.workarea.name }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-delete-footer">
+                                <button type="button"
+                                        onclick="location.href='{% url 'delete_master' master.skill.slug master.pk %}'">
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                        <!-- item -->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main -->
+
+    {% include "handyman/include/footer.html" %}
+{% endblock %}

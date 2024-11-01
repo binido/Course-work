@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "handyman/include/header.html" %}
+
+    <!-- main -->
+
+    <div class="main-container">
+        <div class="main">
+            <div class="admin">
+                <h1>Админка</h1>
+                <!-- admin item -->
+                <div class="admin-item">
+                    <h2>Создать мастера категории</h2>
+                    <div class="admin-buttons">
+                        {% for skill in skills %}
+                            <button type="button"
+                                    onclick="location.href='{% url 'delete_masters' skill.slug %}'">{{ skill.cat_name }}
+                            </button>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- admin item -->
+                <!-- admin item -->
+                <div class="admin-item">
+                    <h2>Удалить мастера категории</h2>
+                    <div class="admin-buttons">
+                        {% for skill in skills %}
+                            <button type="button"
+                                    onclick="location.href='{% url 'delete_masters' skill.slug %}'">{{ skill.cat_name }}
+                            </button>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- admin item -->
+            </div>
+        </div>
+    </div>
+
+    <!-- main  -->
+
+    {% include "handyman/include/footer.html" %}
+{% endblock %}

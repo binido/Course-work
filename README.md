@@ -1,3 +1,9 @@
+# Root data
+**login**: admin
+
+**password**: 123
+
+---
 # Start app
 ### 1. Create venv
 > Linux/Mac
@@ -30,6 +36,12 @@ pip install -r requirements.txt
 
 
 ### 4. Start server
+> Linux/Mac
 ```bash
 python manage.py runserver
+```
+
+>Windows
+```shell
+py manage.py runserver
 ```

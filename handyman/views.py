@@ -98,11 +98,33 @@ def account(request):
 
 @user_passes_test(is_admin)
 def adminPanel(request):
+    skills = Skills.objects.all()
     data = {
-        'title': 'Админка'
+        'title': 'Админка',
+        'skills': skills,
     }
 
-    return render(request, 'account/adminpanel.html', context=data)
+    return render(request, 'adminpanel/adminpanel.html', context=data)
+
+
+@user_passes_test(is_admin)
+def delete_masters(request, skill_slug):
+    skill = get_object_or_404(Skills, slug=skill_slug)
+    masters = Master.objects.filter(skill=skill)
+    data = {
+        "title": f'Удалить {skill.name}',
+        "skill": skill,
+        "masters": masters,
+    }
+    return render(request, "adminpanel/delete_master.html", context=data)
+
+
+@user_passes_test(is_admin)
+def delete_master(request, skill_slug, master_id):
+    skill = get_object_or_404(Skills, slug=skill_slug)
+    master = get_object_or_404(Master, id=master_id, skill=skill)
+    master.delete()
+    return redirect('adminpanel')
 
 
 @user_passes_test(is_master)
