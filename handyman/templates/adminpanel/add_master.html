@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "handyman/include/header.html" %}
+    <div class="form-container">
+        <div class="form">
+            <h1>Создать мастера</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- Имя -->
+                <div class="form-item">
+                    <label for="id_name">Имя</label>
+                    <input type="text" id="id_name" name="name" placeholder="Иванов И.И."
+                           value="{{ form.name.value|default:'' }}"/>
+                </div>
+                <div class="form-error">
+                    {% if form.name.errors %}
+                        <p>{{ form.name.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Опыт -->
+                <div class="form-item">
+                    <label for="id_experience">Опыт</label>
+                    <input type="number" id="id_experience" name="experience" min="0"
+                           value="{{ form.experience.value|default:'' }}"/>
+                </div>
+                <div class="form-error">
+                    {% if form.experience.errors %}
+                        <p>{{ form.experience.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Район -->
+                <div class="form-item">
+                    <label for="id_workarea">Район</label>
+                    <select id="id_workarea" name="workarea">
+                        <option value="" disabled selected>Не выбрано</option>
+                        {% for workarea in form.workarea.field.queryset %}
+                            <option value="{{ workarea.id }}">{{ workarea.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-error">
+                    {% if form.workarea.errors %}
+                        <p>{{ form.workarea.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Изображение -->
+                <div class="form-file">
+                    <label for="id_image">Изображение</label>
+                    <input type="file" id="id_image" name="image"/>
+                </div>
+                <div class="form-error">
+                    {% if form.image.errors %}
+                        <p>{{ form.image.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <input type="submit" value="Создать"/>
+            </form>
+        </div>
+    </div>
+    {% include "handyman/include/footer.html" %}
+{% endblock %}

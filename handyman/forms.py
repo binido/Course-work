@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.forms import UserCreationForm
-from handyman.models import MasterTasks, Feedbacks
+from handyman.models import MasterTasks, Feedbacks, Master
 
 
 class UserRegisterForm(UserCreationForm):
@@ -29,3 +29,9 @@ class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedbacks
         fields = ['feedback']
+
+
+class MasterForm(forms.ModelForm):
+    class Meta:
+        model = Master
+        fields = ['name', 'skill', 'workarea', 'image', 'experience']

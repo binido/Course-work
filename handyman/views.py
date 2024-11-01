@@ -5,7 +5,7 @@ from .models import Master, Skills, MasterTasks, Feedbacks
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
-from .forms import UserRegisterForm, MasterTasksForm, FeedbackForm
+from .forms import UserRegisterForm, MasterTasksForm, FeedbackForm, MasterForm
 
 from django.contrib.auth import logout
 
@@ -125,6 +125,21 @@ def delete_master(request, skill_slug, master_id):
     master = get_object_or_404(Master, id=master_id, skill=skill)
     master.delete()
     return redirect('adminpanel')
+
+
+def add_master(request, skill_slug):
+    skill = get_object_or_404(Skills, slug=skill_slug)
+    if request.method == 'POST':
+        form = MasterForm(request.POST, request.FILES)
+        if form.is_valid():
+            master = form.save(commit=False)
+            master.skill = skill
+            master.save()
+            return redirect(master.get_absolute_url())
+    else:
+        form = MasterForm()
+
+    return render(request, 'adminpanel/add_master.html', {'form': form, 'skill': skill})
 
 
 @user_passes_test(is_master)

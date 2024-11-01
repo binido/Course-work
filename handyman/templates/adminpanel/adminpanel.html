@@ -15,7 +15,7 @@
                     <div class="admin-buttons">
                         {% for skill in skills %}
                             <button type="button"
-                                    onclick="location.href='{% url 'delete_masters' skill.slug %}'">{{ skill.cat_name }}
+                                    onclick="location.href='{% url 'add_master' skill.slug %}'">{{ skill.cat_name }}
                             </button>
                         {% endfor %}
                     </div>
