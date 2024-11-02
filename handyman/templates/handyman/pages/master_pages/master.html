@@ -51,14 +51,21 @@
                     ответственный подход к каждой задаче.
                 </p>
             </div>
-        
+
             {% if user|is_in_group:"admin" %}
                 <!-- admin buttons -->
                 <div class="admin-buttons">
-                    <button type="button" onclick="location.href='./add_portfolio.html'">
+                    <button type="button" onclick="location.href='{% url 'add_portfolio' master.id%}'">
                         Добавить изображение
                     </button>
-                    <button type="button">Удалить все</button>
+                    {% if not master.portfolio_images.all %}
+                        <button type="button" disabled>Удалить все</button>
+                    {% else %}
+                        <button type="button" onclick="location.href='{% url 'delete_portfolio' master.id%}'">Удалить
+                            все
+                        </button>
+                    {% endif %}
+
                 </div>
                 <!-- admin buttons -->
             {% endif %}
@@ -77,7 +84,7 @@
                             {% empty %}
                                 <div class="swiper-placeholder">
                                     <img src="{% static 'handyman/img/master/portfolioPlaceholder.png' %}"
-                                         alt="master portfolio"/>
+                                         alt="master portfolio" loading="lazy"/>
                                 </div>
                             {% endfor %}
                         </div>

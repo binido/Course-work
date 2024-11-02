@@ -55,4 +55,6 @@ urlpatterns += [
     path('adminpanel/delete_masters/<slug:skill_slug>/', views.delete_masters, name='delete_masters'),
     path('adminpanel/delete_masters/<slug:skill_slug>/<slug:master_id>', views.delete_master, name='delete_master'),
     path('adminpanel/add_master/<slug:skill_slug>/', views.add_master, name='add_master'),
+    path('adminpanel/delete_portfolio/<slug:master_id>', views.delete_portfolio, name='delete_portfolio'),
+    path('adminpanel/add_portfolio/<slug:master_id>', views.add_portfolio, name='add_portfolio'),
 ]

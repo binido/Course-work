@@ -1,11 +1,11 @@
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.shortcuts import get_object_or_404
-from .models import Master, Skills, MasterTasks, Feedbacks
+from .models import Master, Skills, MasterTasks, Feedbacks, PortfolioImage
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
-from .forms import UserRegisterForm, MasterTasksForm, FeedbackForm, MasterForm
+from .forms import UserRegisterForm, MasterTasksForm, FeedbackForm, MasterForm, PortfolioImageForm
 
 from django.contrib.auth import logout
 
@@ -66,6 +66,34 @@ def show_master(request, skill_slug, master_id):
         "master": master,
     }
     return render(request, "handyman/pages/master_pages/master.html", context=data)
+
+
+@user_passes_test(is_admin)
+def delete_portfolio(request, master_id):
+    master = get_object_or_404(Master, id=master_id)
+    master.portfolio_images.all().delete()
+    return redirect(master.get_absolute_url())
+
+
+def add_portfolio(request, master_id):
+    master = get_object_or_404(Master, id=master_id)
+
+    if request.method == 'POST':
+        form = PortfolioImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            portfolio_image = form.save(commit=False)
+            portfolio_image.master = master  # Связываем с мастером
+            portfolio_image.save()
+            return redirect(master.get_absolute_url())  # Перенаправляем на страницу мастера
+    else:
+        form = PortfolioImageForm()
+
+    data = {
+        'title': f'Портфолио для {master.name}',
+        'form': form,
+        'master': master,
+    }
+    return render(request, 'adminpanel/add_portfolio.html', context=data)
 
 
 def register(request):
