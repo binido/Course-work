@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="../css/style.css" />
     <title>Иванов И.И. | HandyMan</title>
 
-      <!-- Блок для слайдера -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="../swiper.js" defer></script>
-  <!-- Блок для слайдера -->
+    <!-- Блок для слайдера -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="../swiper.js" defer></script>
+    <!-- Блок для слайдера -->
   </head>
   <body>
     <div class="header-container">
@@ -35,7 +41,9 @@
           <img src="../img/Ivanov.jpg" alt="" />
           <div class="info-text">
             <h1>Иванов И.И.</h1>
-            <p>Электрик</p>
+            <p>
+              <a href=""><span>Электрик</span></a>
+            </p>
             <p>Лет опыта: <span>10</span></p>
             <p>Район: <span>Кировский</span></p>
             <p>Статус: <span>Опытный мастер</span></p>
@@ -67,25 +75,35 @@
             ответственный подход к каждой задаче.
           </p>
         </div>
-
+        <!-- admin buttons -->
+        <div class="admin-buttons">
+          <button type="button" onclick="location.href='./add_portfolio.html'">
+            Добавить изображение
+          </button>
+          <button type="button">Удалить все</button>
+        </div>
+        <!-- admin buttons -->
+        <!-- swiper block -->
         <div class="info info-content">
           <h1>Портфолио</h1>
-          <p>
-            <div class="slider-block">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
-              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
-              <div class="swiper-slide"><img src="https://placehold.co/1000x400" alt=""></div>
+          <!-- swiper -->
+          <div class="slider-block">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide">
+                  <img src="https://placehold.co/1000x500" alt="" />
+                </div> -->
+                <div class="swiper-placeholder">
+                  <img src="../img/portfolioPlaceholder.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
-
-            <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
-
           </div>
-          </p>
-          <p>
+          <!-- swiper -->
+        </div>
+        <!-- swiper block -->
+      </div>
     </div>
 
     <div class="footer-container">

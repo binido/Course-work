@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "handyman/include/header.html" %}
+
+    <div class="form-container">
+        <div class="form">
+            <h1>Создать портфолио</h1>
+            <form action="">
+                <!-- item -->
+                <div class="form-item">
+                    <label for="master">Портфолио для</label>
+                    <input type="text" id="master"/>
+                </div>
+                <div class="form-error">
+                    <p>ошибки мастера тут</p>
+                </div>
+                <!-- item -->
+                <!-- file -->
+                <div class="form-file">
+                    <label for="image">Изображение портфолио</label>
+                    <input type="file" name="" id="image"/>
+                </div>
+                <div class="form-error">
+                    <p>ошибки image тут</p>
+                </div>
+                <!-- file -->
+                <input type="submit" value="Создать"/>
+            </form>
+        </div>
+    </div>
+
+    {% include "handyman/include/footer.html" %}
+{% endblock %}

@@ -30,7 +30,7 @@
                         font-weight: 600
 
                     a
-                        @include link($link-color)
+                        @include link($dark-blue)
 
         .info
             margin-top: 40px
@@ -50,3 +50,18 @@
                     span
                         color: $dark-blue
                         font-weight: 600
+
+        .swiper-placeholder
+            img
+                @include img(1000px, 500px)
+                @include border-radius(5px)
+
+        .admin-buttons
+            display: flex
+            width: 100%
+            justify-content: space-evenly
+            margin-top: 40px
+
+            button
+                @include button(350px, 50px)
+                @include border-radius(5px)

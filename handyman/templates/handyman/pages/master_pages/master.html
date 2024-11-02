@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
 {% block content %}
     {% include "handyman/include/header.html" %}
 
@@ -12,8 +14,10 @@
                 {% endif %}
                 <div class="info-text">
                     <h1>{{ master.name }}</h1>
-                    <p>Специальность: <span>{{ master.skill.name }}</span></p>
-                    <p>Лет опыта: <span>{{ master.experience }}</span></p>
+                    <p><a
+                            href="{% url 'masters_type' master.skill.slug %}"><span>{{ master.skill.name }}</span></a>
+                    </p>
+                    <p>Стаж: <span>{{ master.experience }}</span></p>
                     <p>Район: <span>{{ master.workarea }}</span></p>
                     <p>Статус: <span>{{ master.get_status }}</span></p>
                 </div>
@@ -30,6 +34,9 @@
                     ответственности, Иван Иванович зарекомендовал себя как надежный и
                     квалифицированный специалист.
                 </p>
+                {% if master.skill.name == 'Слесарь' %}
+                    <p>Абоба</p>
+                {% endif %}
                 <p>
                     <span>Основные услуги:</span> Устранение протечек, замена и
                     установка труб, Монтаж и ремонт сантехнических приборов (ванны,
@@ -44,6 +51,17 @@
                     ответственный подход к каждой задаче.
                 </p>
             </div>
+        
+            {% if user|is_in_group:"admin" %}
+                <!-- admin buttons -->
+                <div class="admin-buttons">
+                    <button type="button" onclick="location.href='./add_portfolio.html'">
+                        Добавить изображение
+                    </button>
+                    <button type="button">Удалить все</button>
+                </div>
+                <!-- admin buttons -->
+            {% endif %}
 
             <div class="info info-content">
                 <h1>Портфолио</h1>
@@ -57,7 +75,10 @@
                                     >
                                 </div>
                             {% empty %}
-                                <p>Портфолио отсутствует</p>
+                                <div class="swiper-placeholder">
+                                    <img src="{% static 'handyman/img/master/portfolioPlaceholder.png' %}"
+                                         alt="master portfolio"/>
+                                </div>
                             {% endfor %}
                         </div>
                         <div class="swiper-pagination"></div>
