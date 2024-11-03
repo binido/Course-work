@@ -14,5 +14,23 @@
                 <a href="{% url 'login' %}">Войти</a>
             {% endif %}
         </div>
+        <!-- mobile menu -->
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="{% url 'masters' %}">Мастера</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a href="{% url 'feedbacks' %}">Отзывы</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'account' %}">Личный кабинет</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Войти</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!-- mobile menu -->
     </div>
 </div>

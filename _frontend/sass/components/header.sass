@@ -9,6 +9,9 @@
         height: 60px
         width: 1000px
 
+        @media screen and (max-width: 600px)
+            width: 100%
+
         .header-logo
             a
                 font-family: $logo-font
@@ -27,3 +30,59 @@
                 @include link($main-color)
                 height: 1.1rem
 
+            @media screen and (max-width: 600px)
+                display: none
+
+        #hamburger-icon
+            @include main-font
+            margin: auto 0
+            display: none
+            cursor: pointer
+
+            @media screen and (max-width: 600px)
+                display: block
+
+            div
+                width: 35px
+                height: 3px
+                background-color: $dark-blue
+                margin: 6px 0
+                transition: 0.4s
+
+        .open .bar1
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px)
+            transform: rotate(-45deg) translate(-6px, 6px)
+
+        .open .bar2
+            opacity: 0
+
+        .open .bar3
+            -webkit-transform: rotate(45deg) translate(-6px, -6px)
+            transform: rotate(45deg) translate(-6px, -6px)
+
+        .open .mobile-menu
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: flex-start
+            z-index: 99999
+            background-color: #fff
+
+            li
+                margin-top: 10px
+                background-color: $dark-blue
+                width: 90%
+                @include border-radius(5px)
+                text-align: center
+                padding: 20px
+
+                a
+                    @include link($light-grey)
+
+        .mobile-menu
+            display: none
+            position: absolute
+            top: 60px
+            right: 0
+            height: calc(100vh - 60px)
+            width: 100%
