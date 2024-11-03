@@ -5,32 +5,27 @@
 
     <div class="form-container">
         <div class="form">
-            <h1>Создать портфолио</h1>
+            <h1>Портфолио</h1>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 
-                <!-- Поле мастера (только для отображения) -->
                 <div class="form-item">
                     <label for="master">Портфолио для</label>
                     <input type="text" id="master" value="{{ master.name }}" disabled/>
                 </div>
 
-                <!-- Поле ошибки для мастера (не нужно, так как поле readonly) -->
                 
-                <!-- Поле для загрузки изображения -->
                 <div class="form-file">
                     <label for="id_image">Изображение портфолио</label>
                     {{ form.image }}
                 </div>
 
-                <!-- Ошибка для поля изображения -->
                 {% if form.image.errors %}
                     <div class="form-error">
                         <p>{{ form.image.errors.0 }}</p>
                     </div>
                 {% endif %}
 
-                <!-- Кнопка отправки -->
                 <input type="submit" value="Создать"/>
             </form>
         </div>

@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.shortcuts import get_object_or_404
-from .models import Master, Skills, MasterTasks, Feedbacks, PortfolioImage
+from .models import Master, Skills, MasterTasks, Feedbacks, PortfolioImage, Service
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
@@ -49,6 +49,7 @@ def masters(request):
 def show_masters(request, skill_slug):
     skill = get_object_or_404(Skills, slug=skill_slug)
     masters = Master.objects.filter(skill=skill)
+
     data = {
         "title": skill.cat_name,
         "skill": skill,
@@ -60,10 +61,13 @@ def show_masters(request, skill_slug):
 def show_master(request, skill_slug, master_id):
     skill = get_object_or_404(Skills, slug=skill_slug)
     master = get_object_or_404(Master, id=master_id, skill=skill)
+    services = Service.objects.filter(skill=skill)
     data = {
         "title": master.name,
         "skill": skill,
         "master": master,
+        "services": services,
+
     }
     return render(request, "handyman/pages/master_pages/master.html", context=data)
 
@@ -75,6 +79,7 @@ def delete_portfolio(request, master_id):
     return redirect(master.get_absolute_url())
 
 
+@user_passes_test(is_admin)
 def add_portfolio(request, master_id):
     master = get_object_or_404(Master, id=master_id)
 
@@ -82,9 +87,9 @@ def add_portfolio(request, master_id):
         form = PortfolioImageForm(request.POST, request.FILES)
         if form.is_valid():
             portfolio_image = form.save(commit=False)
-            portfolio_image.master = master  # Связываем с мастером
+            portfolio_image.master = master
             portfolio_image.save()
-            return redirect(master.get_absolute_url())  # Перенаправляем на страницу мастера
+            return redirect(master.get_absolute_url())
     else:
         form = PortfolioImageForm()
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Master, Skills, Workarea, PortfolioImage, MasterTasks, Feedbacks
+from .models import Master, Skills, Workarea, PortfolioImage, MasterTasks, Feedbacks, Service
 
 
 class PortfolioImageInline(admin.TabularInline):
@@ -16,6 +16,13 @@ class MasterAdmin(admin.ModelAdmin):
 @admin.register(Skills)
 class SkillsAdmin(admin.ModelAdmin):
     list_display = ('name', 'cat_name', 'slug')
+
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'skill')
+    search_fields = ('name', 'skill__name')
+    list_filter = ('skill',)
 
 
 @admin.register(Workarea)
