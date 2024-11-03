@@ -1,3 +1,5 @@
+{% load custom_tags %}
+
 <div class="footer-container">
     <div class="footer">
         <div class="footer-block">
@@ -17,14 +19,12 @@
         <div class="footer-block">
             <h3>Мастера</h3>
             <ul class="grid-ul">
-                <li><a href="{% url 'masters_type' 'santehniky' %}">Сантехники</a></li>
-                <li><a href="{% url 'masters_type' 'plotniky' %}">Плотники</a></li>
-                <li><a href="{% url 'masters_type' 'elektriky' %}">Электрики</a></li>
-                <li><a href="{% url 'masters_type' 'malyary' %}">Маляры</a></li>
-                <li><a href="{% url 'masters_type' 'slesary' %}">Слесари</a></li>
-                <li><a href="{% url 'masters_type' 'stolyary' %}">Столяры</a></li>
-                <li><a href="{% url 'masters_type' 'mebelshiky' %}">Мебельшики</a></li>
-                <li><a href="{% url 'masters_type' 'universalnie' %}">Универсальные</a></li>
+                {% get_all_skills as skills %}
+                {% for skill in skills %}
+                    <li><a href="{% url 'masters_type' skill.slug %}">{{ skill.cat_name }}</a></li>
+                {% empty %}
+                    <li>Нет доступных мастеров</li>
+                {% endfor %}
             </ul>
         </div>
         <div class="footer-block">

@@ -38,10 +38,13 @@ class Skills(models.Model):
     name = models.CharField(max_length=100)
     cat_name = models.CharField(
         max_length=100
-    )  # Тоже что и name, но во множественном числе
+    )
     slug = models.CharField(max_length=100, unique=True)
     image = models.ImageField(upload_to='skills/images', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['cat_name']
 
     def __str__(self):
         return str(self.name)
