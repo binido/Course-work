@@ -40,7 +40,7 @@
                         <h2>Услуги:</h2>
                         <ul>
                             {% for service in services %}
-                                <li>{{ service.name }}: {{ services.description }}</li>
+                                <li><b>{{ service.name }}</b>: {{ service.description }}</li>
                             {% empty %}
                                 <li>Нет доступных услуг</li>
                             {% endfor %}
