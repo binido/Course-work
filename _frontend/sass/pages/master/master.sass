@@ -3,13 +3,22 @@
         .info-block
             margin-top: 40px
             display: flex
-            flex-direction: row
             align-items: center
             gap: 30px
+            @media screen and (min-width: 480px)
+                flex-direction: column
+
+            @media screen and (min-width: 768px)
+                flex-direction: row
 
             img
-                @include img(200px, 200px)
                 @include border-radius(5px)
+
+                @media screen and (min-width: 480px)
+                    @include img(300px, 300px)
+
+                @media screen and (min-width: 768px)
+                    @include img(200px, 200px)
 
             .info-text
                 display: flex
@@ -43,6 +52,8 @@
                 color: $translucent
 
             &-content
+                display: flex
+                align-items: center
                 gap: 1rem
 
                 .content
@@ -73,10 +84,29 @@
                             flex-direction: column
                             gap: 5px
 
+                
+
         .swiper-placeholder
             img
-                @include img(1000px, 500px)
                 @include border-radius(5px)
+
+                @media screen and (min-width: 320px)
+                    @include img(300px, 150px)
+
+                @media screen and (min-width: 480px)
+                    @include img(400px, 200px)
+
+                @media screen and (min-width: 620px)
+                    @include img(600px, 300px)
+
+                @media screen and (min-width: 768px)
+                    @include img(700px, 350px)
+
+                @media screen and (min-width: 992px)
+                    @include img(900px, 450px)
+
+                @media screen and (min-width: 1200px)
+                    @include img(1000px, 500px)
 
         .admin-buttons
             display: flex
@@ -84,6 +114,19 @@
             justify-content: space-evenly
             margin-top: 40px
 
+            @media screen and (min-width: 480px)
+                flex-direction: column
+                gap: 20px
+                align-items: center
+
+            @media screen and (min-width: 768px)
+                flex-direction: row
+
             button
-                @include button(350px, 50px)
                 @include border-radius(5px)
+
+                @media screen and (min-width: 480px)
+                    @include button(300px, 50px)
+
+                @media screen and (min-width: 992px)
+                    @include button(350px, 50px)

@@ -1,12 +1,28 @@
 .feedback
-    margin-top: 60px
     display: flex
     flex-direction: column
+
+    @media screen and (min-width: 480px)
+        margin-top: 20px
+
+    @media screen and (min-width: 768px)
+        margin-top: 40px
+
+    @media screen and (min-width: 992px)
+        margin-top: 60px
 
     &-info
         h1
             font-size: 24px
             color: $translucent
+
+            @media screen and (min-width: 480px)
+                font-size: 28px
+                text-align: center
+
+            @media screen and (min-width: 768px)
+                font-size: 24px
+                text-align: left
 
         .text
             margin-top: 30px
@@ -26,13 +42,27 @@
 
             button
                 @include button(350px, 50px)
-                align-self: flex-start
+
+                @media screen and (min-width: 480px)
+                    align-self: center
+
+                @media screen and (min-width: 768px)
+                    align-self: flex-start
 
     ul
         margin-top: 60px
         display: grid
-        grid-template-columns: repeat(3, 1fr)
         gap: 20px
+        justify-items: center
+
+        @media screen and (min-width: 480px)
+            grid-template-columns: repeat(1, 1fr)
+
+        @media screen and (min-width: 768px)
+            grid-template-columns: repeat(2, 1fr)
+
+        @media screen and (min-width: 992px)
+            grid-template-columns: repeat(3, 1fr)
 
         li
             padding: 10px
@@ -63,6 +93,7 @@
                         align-self: flex-end
                         margin-top: auto
                         color: $translucent
+                        text-align: left
 
             .feedback-body
                 flex: 1

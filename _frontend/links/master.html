@@ -18,6 +18,7 @@
     ></script>
     <script src="../swiper.js" defer></script>
     <!-- Блок для слайдера -->
+    <script src="../script.js"></script>
   </head>
   <body>
     <div class="header-container">
@@ -26,12 +27,26 @@
           <a href="../index.html">HandyMan</a>
         </div>
         <div class="header-menu">
-          <a href="masterts.html">Мастера</a>
+          <a href="masters.html">Мастера</a>
           <a href="contacts.html">Контакты</a>
           <a href="about.html">О нас</a>
           <a href="feedback.html">Отзывы</a>
-          <a href="../links/login.html">Войти</a>
+          <a href="login.html">Войти</a>
         </div>
+        <!-- mobile menu -->
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <ul class="mobile-menu">
+            <li><a href="masters.html">Мастера</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="feedbacks.html">Отзывы</a></li>
+            <li><a href="login.html">Войти</a></li>
+          </ul>
+        </div>
+        <!-- mobile menu -->
       </div>
     </div>
 
@@ -57,9 +72,10 @@
               <span>Иван Иванович</span> — опытный мастер с более чем
               <span>10</span>-летним стажем работы в сфере ремонта и бытовых
               услуг. Район работы — <span>Кировский</span>. Он - это
-              профессиональный специалист, который не боиться трудностей. Благодаря профессиональному подходу и
-              высокой ответственности, <span>Иван Иванович</span> зарекомендовал себя как
-              надежный и квалифицированный специалист.
+              профессиональный специалист, который не боиться трудностей.
+              Благодаря профессиональному подходу и высокой ответственности,
+              <span>Иван Иванович</span> зарекомендовал себя как надежный и
+              квалифицированный специалист.
             </p>
             <div class="services">
               <h2>Услуги:</h2>
@@ -95,9 +111,9 @@
           <div class="slider-block">
             <div class="swiper">
               <div class="swiper-wrapper">
-                <!-- <div class="swiper-slide">
+                <div class="swiper-slide">
                   <img src="https://placehold.co/1000x500" alt="" />
-                </div> -->
+                </div>
                 <div class="swiper-placeholder">
                   <img src="../img/portfolioPlaceholder.png" alt="" />
                 </div>
@@ -111,16 +127,22 @@
       </div>
     </div>
 
+    <!-- footer -->
     <div class="footer-container">
       <div class="footer">
         <div class="footer-block">
           <h2>HandyMan</h2>
           <ul class="mt-20">
-            <li>ООО “Мастер на все руки”</li>
-            <li>ИНН: 1234567890</li>
-            <li>ОРГНИП: 123456789098765</li>
-            <li>123456. Московская область, г. Москва, Ленинская ул., зд. 1</li>
-            <li>&#127279; 2024 HandyMan. Свободная лицензия</li>
+            <li>Разработал Пименов А.Е.</li>
+            <li>Студент КС ПГУТИ</li>
+            <li>Группы 4ИСПВ-1</li>
+            <li>
+              <a href="https://github.com/binido/Course-work">GitHub проекта</a>
+            </li>
+            <li>
+              <span>&copy;</span> 2024 HandyMan. Проект с открытым исходным
+              кодом
+            </li>
           </ul>
         </div>
         <div class="footer-block">
@@ -146,5 +168,6 @@
         </div>
       </div>
     </div>
+    <!-- footer -->
   </body>
 </html>

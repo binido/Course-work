@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <title>О нас | HandyMan</title>
   </head>
+  <script src="../script.js"></script>
   <body>
     <div class="header-container">
       <div class="header">
@@ -14,12 +15,26 @@
           <a href="../index.html">HandyMan</a>
         </div>
         <div class="header-menu">
-          <a href="masterts.html">Мастера</a>
+          <a href="masters.html">Мастера</a>
           <a href="contacts.html">Контакты</a>
           <a href="about.html">О нас</a>
           <a href="feedback.html">Отзывы</a>
-          <a href="../links/login.html">Войти</a>
+          <a href="login.html">Войти</a>
         </div>
+        <!-- mobile menu -->
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <ul class="mobile-menu">
+            <li><a href="masters.html">Мастера</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="feedbacks.html">Отзывы</a></li>
+            <li><a href="login.html">Войти</a></li>
+          </ul>
+        </div>
+        <!-- mobile menu -->
       </div>
     </div>
 
