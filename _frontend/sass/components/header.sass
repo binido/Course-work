@@ -3,14 +3,15 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.5)
 
     .header
+        z-index: 99999
         display: flex
         justify-content: space-between
         align-items: center
         height: 60px
-        width: 1000px
+        width: min(95%, 1000px)
 
-        @media screen and (max-width: 600px)
-            width: 100%
+        // @media screen and (min-width: 1200px)
+        //     width: 1000px
 
         .header-logo
             a
@@ -21,7 +22,7 @@
         .header-menu
             @include main-font
             font-size: 16px
-            display: flex
+            display: none
             gap: 25px
             justify-content: space-between
             align-items: center
@@ -30,17 +31,17 @@
                 @include link($main-color)
                 height: 1.1rem
 
-            @media screen and (max-width: 600px)
-                display: none
+            @media screen and (min-width: 768px)
+                display: flex
 
         #hamburger-icon
             @include main-font
             margin: auto 0
-            display: none
+            display: block
             cursor: pointer
 
-            @media screen and (max-width: 600px)
-                display: block
+            @media screen and (min-width: 768px)
+                display: none
 
             div
                 width: 35px
@@ -65,8 +66,8 @@
             flex-direction: column
             align-items: center
             justify-content: flex-start
-            z-index: 99999
             background-color: #fff
+            margin-top: 10px
 
             li
                 margin-top: 10px
@@ -74,10 +75,14 @@
                 width: 90%
                 @include border-radius(5px)
                 text-align: center
-                padding: 20px
 
                 a
-                    @include link($light-grey)
+                    @include link($light-grey, $light-grey, false)
+                    font-size: 20px
+                    display: inline-block
+                    width: 100%
+                    height: 100%
+                    padding: 20px
 
         .mobile-menu
             display: none

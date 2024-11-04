@@ -2,11 +2,50 @@
     --swiper-pagination-color: #2c2a4d
 
 .slider-block
-    width: 1000px
-    height: 500px
+
+    @media screen and (min-width: 320px)
+        width: 300px
+        height: 150px
+
+    @media screen and (min-width: 480px)
+        width: 400px
+        height: 200px
+
+    @media screen and (min-width: 620px)
+        width: 600px
+        height: 300px
+
+    @media screen and (min-width: 768px)
+        width: 700px
+        height: 350px
+
+    @media screen and (min-width: 992px)
+        width: 900px
+        height: 450px
+
+    @media screen and (min-width: 1200px)
+        width: 1000px
+        height: 500px
 
     .swiper
         .swiper-slide
             img
-                @include img(1000px, 500px)
                 @include border-radius(5px)
+
+                @media screen and (min-width: 320px)
+                    @include img(300px, 150px)
+
+                @media screen and (min-width: 480px)
+                    @include img(400px, 200px)
+
+                @media screen and (min-width: 620px)
+                    @include img(600px, 300px)
+
+                @media screen and (min-width: 768px)
+                    @include img(700px, 350px)
+
+                @media screen and (min-width: 992px)
+                    @include img(900px, 450px)
+
+                @media screen and (min-width: 1200px)
+                    @include img(1000px, 500px)

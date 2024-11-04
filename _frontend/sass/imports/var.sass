@@ -34,6 +34,9 @@ $transparent-white: rgba(255, 255, 255, 0.5)
     @include flex-center
     margin: 0 10px
 
+    @media screen and (max-width: 992px)
+        margin: 0 20px
+
 @mixin center
     position: fixed
     inset: 0
@@ -56,7 +59,7 @@ $transparent-white: rgba(255, 255, 255, 0.5)
     background-size: 0% 2px
     transition: all .15s ease-in-out
 
-    &:hover
+    &:hover, &:active
         @if $text-decoration
             background-size: 100% 2px
         @if $hover-color
@@ -88,7 +91,7 @@ $transparent-white: rgba(255, 255, 255, 0.5)
     transition: all .25s ease-in-out
     cursor: pointer
 
-    &:hover
+    &:hover, &:active
         background-color: #232a34c4
         // color: $dark-blue
         border: 2px solid $dark-blue
