@@ -114,3 +114,11 @@ class Feedbacks(models.Model):
 
     def __str__(self):
         return f"Feedbacks for {self.name}"
+
+
+class Banners(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    img = models.ImageField(upload_to='banners/')
+
+    def __str__(self):
+        return f"{self.img}"

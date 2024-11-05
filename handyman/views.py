@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.shortcuts import get_object_or_404
-from .models import Master, Skills, MasterTasks, Feedbacks, PortfolioImage, Service
+from .models import Master, Skills, MasterTasks, Feedbacks, PortfolioImage, Service, Banners
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
@@ -23,7 +23,9 @@ def is_user(user):
 
 
 def index(request):
-    data = {"title": "Главная"}
+    banners = Banners.objects.all()
+    data = {"title": "Главная",
+            'banners': banners, }
     return render(request, "handyman/index.html", context=data)
 
 

@@ -16,9 +16,12 @@
                 <div class="slider-block">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="https://placehold.co/1000x500" alt=""></div>
-                            <div class="swiper-slide"><img src="https://placehold.co/1000x500" alt=""></div>
-                            <div class="swiper-slide"><img src="https://placehold.co/1000x500" alt=""></div>
+                            {% for banner in banners %}
+                                <div class="swiper-slide">
+                                    <img src="{% static 'handyman/img/master/portfolioPlaceholder.png' %}" alt=""
+                                         loading="lazy">
+                                </div>
+                            {% endfor %}
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
