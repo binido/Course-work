@@ -25,6 +25,12 @@
                     gap: 15px
                     justify-content: center
 
+                    @media screen and (min-width: 320px)
+                        grid-template-columns: 350px
+
+                    @media screen and (min-width: 768px)
+                        grid-template-columns: 350px 350px
+
                     button
                         @include button(350px, 50px)
                         @include border-radius(5px)

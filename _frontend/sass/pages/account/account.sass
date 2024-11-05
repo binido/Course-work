@@ -13,7 +13,7 @@
             .account
                 @include shadow
                 @include border-radius(5px)
-                width: 800px
+                width: min(800px, 95%)
                 padding: 20px
 
                 h1
@@ -24,30 +24,19 @@
                 .image-block
                     margin-top: 20px
                     display: flex
-                    flex-direction: row
                     gap: 20px
+
+                    @media screen and (min-width: 480px)
+                        align-items: center
+                        justify-content: center
 
                     img
                         @include img(150px)
                         @include border-radius(5px)
                         border: 2px solid $light-grey
 
-                    .image-text
-                        display: flex
-                        flex-direction: column
-                        gap: 50px
-                        max-width: 215px
-                        align-items: center
-                        justify-content: center
-
-                        p
-                            @include main-font
-                            text-align: center
-                            color: $translucent
-
-                        button
-                            @include button(200px, 40px)
-                            @include border-radius(5px)
+                        @media screen and (min-width: 480px)
+                            @include img(300px)
 
                 form
                     margin-top: 45px
@@ -55,15 +44,14 @@
                     gap: 20px
                     align-items: center
                     justify-content: center
-                    grid-template-columns: 1fr 1fr
+                    align-items: center
+                    justify-items: center
 
-                    // input
-                    //     &[type='text'], &[type='password'], &[type='tel']
-                    //         @include input(350px, 50px)
+                    @media screen and (min-width: 480px)
+                        grid-template-columns: 1fr
 
-                    //     &[type='button']
-                    //         @include button(350px, 50px)
-                    //         @include border-radius(5px)
+                    @media screen and (min-width: 768px)
+                        grid-template-columns: repeat(2, 1fr)
 
                 &>ul
                     display: flex
@@ -80,3 +68,4 @@
                     @include border-radius(5px)
                     margin-top: 30px
                     float: right
+

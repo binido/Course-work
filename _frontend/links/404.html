@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
-      <link rel="stylesheet" href="../css/style.css" />
-      <title>404 | HandyMan</title>
-    </head>
-  </head>
-  <body>
-    <div class="header-container">
-      <div class="header">
-        <div class="header-logo">
-          <a href="../index.html">HandyMan</a>
-        </div>
-        <div class="header-menu">
-          <a href="masterts.html">Мастера</a>
-          <a href="links/contacts.html">Контакты</a>
-          <a href="links/about.html">О нас</a>
-          <a href="feedback.html">Отзывы</a>
-          <a href="links/login.html">Войти</a>
-        </div>
-      </div>
-    </div>
 
-    <div class="center">
-      <p>Страницы, которую вы ищите не существует</p>
-      <h1>404</h1>
-      <a href="../index.html">Вернуться на главную</a>
+<head>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>404 | HandyMan</title>
+    <script src="../script.js"></script>
+
+  </head>
+</head>
+
+<body>
+  <div class="header-container">
+    <div class="header">
+      <div class="header-logo">
+        <a href="../index.html">HandyMan</a>
+      </div>
+      <div class="header-menu">
+        <a href="masters.html">Мастера</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="about.html">О нас</a>
+        <a href="feedback.html">Отзывы</a>
+        <a href="login.html">Войти</a>
+      </div>
+      <!-- mobile menu -->
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-menu">
+          <li><a href="masters.html">Мастера</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="feedbacks.html">Отзывы</a></li>
+          <li><a href="login.html">Войти</a></li>
+        </ul>
+      </div>
+      <!-- mobile menu -->
     </div>
-  </body>
+  </div>
+
+  <div class="center">
+    <p>Страницы, которую вы ищите не существует</p>
+    <h1>404</h1>
+    <a href="../index.html">Вернуться на главную</a>
+  </div>
+</body>
+
 </html>

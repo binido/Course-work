@@ -1,173 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../../img/Logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="../../css/style.css" />
-    <script src="../../script.js" defer></script>
-    <title>Заказы | HandyMan</title>
-  </head>
-  <body>
-    <div class="header-container">
-      <div class="header">
-        <div class="header-logo">
-          <a href="index.html">HandyMan</a>
-        </div>
-        <div class="header-menu">
-          <a href="masters.html">Мастера</a>
-          <a href="contacts.html">Контакты</a>
-          <a href="about.html">О нас</a>
-          <a href="feedback.html">Отзыв</a>
-          <a href="login.html">Войти</a>
-        </div>
-      </div>
-    </div>
-    <!-- main -->
 
-    <div class="main-container">
-      <div class="main">
-        <div class="main-tasks">
-          <h1>Заказы</h1>
-          <!-- main-tasks-block -->
-          <div class="main-tasks-block">
-            <h2>Не взяты</h2>
-            <div class="main-tasks-block-list">
-              <ul>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button" disabled>Взять</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Взять</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Взять</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Взять</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Взять</button>
-                </li>
-              </ul>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../../img/Logo.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../script.js" defer></script>
+  <title>Заказы | HandyMan</title>
+</head>
+
+<body>
+  <div class="header-container">
+    <div class="header">
+      <div class="header-logo">
+        <a href="../index.html">HandyMan</a>
+      </div>
+      <div class="header-menu">
+        <a href="masters.html">Мастера</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="about.html">О нас</a>
+        <a href="feedback.html">Отзывы</a>
+        <a href="login.html">Войти</a>
+      </div>
+      <!-- mobile menu -->
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-menu">
+          <li><a href="masters.html">Мастера</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="feedbacks.html">Отзывы</a></li>
+          <li><a href="login.html">Войти</a></li>
+        </ul>
+      </div>
+      <!-- mobile menu -->
+    </div>
+  </div>
+  <!-- main -->
+
+  <div class="main-container">
+    <div class="main">
+      <div class="main-tasks">
+        <h1>Заказы</h1>
+        <!-- main-tasks-block -->
+        <div class="main-tasks-block">
+          <h2>Не взяты</h2>
+          <div class="main-tasks-block-list">
+            <ul>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button" disabled>Взять</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Взять</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Взять</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Взять</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Взять</button>
+              </li>
+            </ul>
           </div>
-          <!-- main-tasks-block -->
+        </div>
+        <!-- main-tasks-block -->
 
-          <!-- main-tasks-block -->
-          <div class="main-tasks-block">
-            <h2>Исполняются</h2>
-            <div class="main-tasks-block-list">
-              <ul>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Закрыть</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Закрыть</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Закрыть</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Закрыть</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Закрыть</button>
-                </li>
-                <li>
-                  <h2>Слесарь</h2>
-                  <p>Клиент: Иванов Иван</p>
-                  <p>Номер: +7(999)999-99-99</p>
-                  <p>Кировский район, улица Киевская, дом 11, кв 19</p>
-                  <button type="button">Закрыть</button>
-                </li>
-              </ul>
-            </div>
+        <!-- main-tasks-block -->
+        <div class="main-tasks-block">
+          <h2>Исполняются</h2>
+          <div class="main-tasks-block-list">
+            <ul>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Закрыть</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Закрыть</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Закрыть</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Закрыть</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Закрыть</button>
+              </li>
+              <li>
+                <h2>Слесарь</h2>
+                <p>Клиент: Иванов Иван</p>
+                <p>Номер: +7(999)999-99-99</p>
+                <p>Кировский район, улица Киевская, дом 11, кв 19</p>
+                <button type="button">Закрыть</button>
+              </li>
+            </ul>
           </div>
-          <!-- main-tasks-block -->
         </div>
+        <!-- main-tasks-block -->
       </div>
     </div>
+  </div>
 
-    <!-- main -->
+  <!-- main -->
 
-    <div class="footer-container">
-      <div class="footer">
-        <div class="footer-block">
-          <h2>HandyMan</h2>
-          <ul class="mt-20">
-            <li>Разработал Пименов А.Е.</li>
-            <li>
-              <a href="https://github.com/binido/Course-work">GitHub проекта</a>
-            </li>
-            <li>
-              <span>&copy;</span> 2024 HandyMan. Проект с открытым исходным
-              кодом
-            </li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <h3>Мастера</h3>
-          <ul class="grid-ul">
-            <li><a href="">Сантехники</a></li>
-            <li><a href="">Плотники</a></li>
-            <li><a href="">Электрики</a></li>
-            <li><a href="">Маляры</a></li>
-            <li><a href="">Слесари</a></li>
-            <li><a href="">Столяры</a></li>
-            <li><a href="">Мебельшики</a></li>
-            <li><a href="">Универсальные</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <h3>Навигация</h3>
-          <ul>
-            <li><a href="">Контакты</a></li>
-            <li><a href="">О нас</a></li>
-            <li><a href="">Отзывы</a></li>
-          </ul>
-        </div>
+  <!-- footer -->
+  <div class="footer-container">
+    <div class="footer">
+      <div class="footer-block">
+        <h2>HandyMan</h2>
+        <ul class="mt-20">
+          <li>Разработал Пименов А.Е.</li>
+          <li>Студент КС ПГУТИ</li>
+          <li>Группы 4ИСПВ-1</li>
+          <li>
+            <a href="https://github.com/binido/Course-work">GitHub проекта</a>
+          </li>
+          <li>
+            <span>&copy;</span> 2024 HandyMan. Проект с открытым исходным
+            кодом
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Мастера</h3>
+        <ul class="grid-ul">
+          <li><a href="">Сантехники</a></li>
+          <li><a href="">Плотники</a></li>
+          <li><a href="">Электрики</a></li>
+          <li><a href="">Маляры</a></li>
+          <li><a href="">Слесари</a></li>
+          <li><a href="">Столяры</a></li>
+          <li><a href="">Мебельшики</a></li>
+          <li><a href="">Универсальные</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">О нас</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- footer -->
+</body>
+
 </html>

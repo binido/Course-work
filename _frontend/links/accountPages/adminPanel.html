@@ -1,116 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../../img/Logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="../../css/style.css" />
-    <script src="../../script.js" defer></script>
-    <title>Админка | HandyMan</title>
-  </head>
-  <body>
-    <div class="header-container">
-      <div class="header">
-        <div class="header-logo">
-          <a href="index.html">HandyMan</a>
-        </div>
-        <div class="header-menu">
-          <a href="masters.html">Мастера</a>
-          <a href="contacts.html">Контакты</a>
-          <a href="about.html">О нас</a>
-          <a href="feedback.html">Отзыв</a>
-          <a href="login.html">Войти</a>
-        </div>
-      </div>
-    </div>
-    <!-- main -->
 
-    <div class="main-container">
-      <div class="main">
-        <div class="admin">
-          <h1>Админка</h1>
-          <!-- admin item -->
-          <div class="admin-item">
-            <h2>Создать мастера категории</h2>
-            <div class="admin-buttons">
-              <button
-                type="button"
-                onclick="location.href='./createmaster.html'"
-              >
-                Сантехники
-              </button>
-              <button type="button">Столяры</button>
-              <button type="button">Плотники</button>
-              <button type="button">Слесари</button>
-              <button type="button">Электрики</button>
-              <button type="button">Мебельшики</button>
-              <button type="button">Маляры</button>
-              <button type="button">Универсальные</button>
-            </div>
-          </div>
-          <!-- admin item -->
-          <!-- admin item -->
-          <div class="admin-item">
-            <h2>Удалить мастера категории</h2>
-            <div class="admin-buttons">
-              <button
-                type="button"
-                onclick="location.href='./deletemaster.html'"
-              >
-                Сантехники
-              </button>
-              <button type="button">Столяры</button>
-              <button type="button">Плотники</button>
-              <button type="button">Слесари</button>
-              <button type="button">Электрики</button>
-              <button type="button">Мебельшики</button>
-              <button type="button">Маляры</button>
-              <button type="button">Универсальные</button>
-            </div>
-          </div>
-          <!-- admin item -->
-        </div>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../../img/Logo.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../script.js" defer></script>
+  <title>Админка | HandyMan</title>
+</head>
 
-    <!-- main  -->
-    <div class="footer-container">
-      <div class="footer">
-        <div class="footer-block">
-          <h2>HandyMan</h2>
-          <ul class="mt-20">
-            <li>Разработал Пименов А.Е.</li>
-            <li>
-              <a href="https://github.com/binido/Course-work">GitHub проекта</a>
-            </li>
-            <li>
-              <span>&copy;</span> 2024 HandyMan. Проект с открытым исходным
-              кодом
-            </li>
-          </ul>
+<body>
+  <div class="header-container">
+    <div class="header">
+      <div class="header-logo">
+        <a href="../index.html">HandyMan</a>
+      </div>
+      <div class="header-menu">
+        <a href="masters.html">Мастера</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="about.html">О нас</a>
+        <a href="feedback.html">Отзывы</a>
+        <a href="login.html">Войти</a>
+      </div>
+      <!-- mobile menu -->
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-menu">
+          <li><a href="masters.html">Мастера</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="feedbacks.html">Отзывы</a></li>
+          <li><a href="login.html">Войти</a></li>
+        </ul>
+      </div>
+      <!-- mobile menu -->
+    </div>
+  </div>
+  <!-- main -->
+
+  <div class="main-container">
+    <div class="main">
+      <div class="admin">
+        <h1>Админка</h1>
+        <!-- admin item -->
+        <div class="admin-item">
+          <h2>Создать мастера категории</h2>
+          <div class="admin-buttons">
+            <button type="button" onclick="location.href='./createmaster.html'">
+              Сантехники
+            </button>
+            <button type="button">Столяры</button>
+            <button type="button">Плотники</button>
+            <button type="button">Слесари</button>
+            <button type="button">Электрики</button>
+            <button type="button">Мебельшики</button>
+            <button type="button">Маляры</button>
+            <button type="button">Универсальные</button>
+          </div>
         </div>
-        <div class="footer-block">
-          <h3>Мастера</h3>
-          <ul class="grid-ul">
-            <li><a href="">Сантехники</a></li>
-            <li><a href="">Плотники</a></li>
-            <li><a href="">Электрики</a></li>
-            <li><a href="">Маляры</a></li>
-            <li><a href="">Слесари</a></li>
-            <li><a href="">Столяры</a></li>
-            <li><a href="">Мебельшики</a></li>
-            <li><a href="">Универсальные</a></li>
-          </ul>
+        <!-- admin item -->
+        <!-- admin item -->
+        <div class="admin-item">
+          <h2>Удалить мастера категории</h2>
+          <div class="admin-buttons">
+            <button type="button" onclick="location.href='./deletemaster.html'">
+              Сантехники
+            </button>
+            <button type="button">Столяры</button>
+            <button type="button">Плотники</button>
+            <button type="button">Слесари</button>
+            <button type="button">Электрики</button>
+            <button type="button">Мебельшики</button>
+            <button type="button">Маляры</button>
+            <button type="button">Универсальные</button>
+          </div>
         </div>
-        <div class="footer-block">
-          <h3>Навигация</h3>
-          <ul>
-            <li><a href="">Контакты</a></li>
-            <li><a href="">О нас</a></li>
-            <li><a href="">Отзывы</a></li>
-          </ul>
-        </div>
+        <!-- admin item -->
       </div>
     </div>
-  </body>
+  </div>
+
+  <!-- main  -->
+  <!-- footer -->
+  <div class="footer-container">
+    <div class="footer">
+      <div class="footer-block">
+        <h2>HandyMan</h2>
+        <ul class="mt-20">
+          <li>Разработал Пименов А.Е.</li>
+          <li>Студент КС ПГУТИ</li>
+          <li>Группы 4ИСПВ-1</li>
+          <li>
+            <a href="https://github.com/binido/Course-work">GitHub проекта</a>
+          </li>
+          <li>
+            <span>&copy;</span> 2024 HandyMan. Проект с открытым исходным
+            кодом
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Мастера</h3>
+        <ul class="grid-ul">
+          <li><a href="">Сантехники</a></li>
+          <li><a href="">Плотники</a></li>
+          <li><a href="">Электрики</a></li>
+          <li><a href="">Маляры</a></li>
+          <li><a href="">Слесари</a></li>
+          <li><a href="">Столяры</a></li>
+          <li><a href="">Мебельшики</a></li>
+          <li><a href="">Универсальные</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">О нас</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+</body>
+
 </html>

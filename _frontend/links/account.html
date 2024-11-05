@@ -1,106 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+
   <head>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
-      <link rel="stylesheet" href="../css/style.css" />
-      <script src="../script.js" defer></script>
-      <title>Личный кабинет | HandyMan</title>
-    </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/Logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../script.js" defer></script>
+    <title>Личный кабинет | HandyMan</title>
+    <script src="../script.js"></script>
+
   </head>
-  <body>
-    <div class="header-container">
-      <div class="header">
-        <div class="header-logo">
-          <a href="index.html">HandyMan</a>
-        </div>
-        <div class="header-menu">
-          <a href="masters.html">Мастера</a>
-          <a href="contacts.html">Контакты</a>
-          <a href="about.html">О нас</a>
-          <a href="feedback.html">Отзыв</a>
-          <a href="login.html">Войти</a>
-        </div>
-      </div>
-    </div>
+</head>
 
-    <div class="main-container">
-      <div class="main">
-        <div class="account-container">
-          <div class="account">
-            <h1>Личный кабинет</h1>
-            <div class="image-block">
-              <img src="https://placehold.co/150x150" alt="" />
+<body>
+  <div class="header-container">
+    <div class="header">
+      <div class="header-logo">
+        <a href="../index.html">HandyMan</a>
+      </div>
+      <div class="header-menu">
+        <a href="masters.html">Мастера</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="about.html">О нас</a>
+        <a href="feedback.html">Отзывы</a>
+        <a href="login.html">Войти</a>
+      </div>
+      <!-- mobile menu -->
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-menu">
+          <li><a href="masters.html">Мастера</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="feedbacks.html">Отзывы</a></li>
+          <li><a href="login.html">Войти</a></li>
+        </ul>
+      </div>
+      <!-- mobile menu -->
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="main">
+      <div class="account-container">
+        <div class="account">
+          <h1>Личный кабинет</h1>
+          <div class="image-block">
+            <img src="https://placehold.co/150x150" alt="" />
+          </div>
+          <form action="">
+            <div class="form-item">
+              <label for="username">Имя</label>
+              <input type="text" id="username" value="admin" />
             </div>
-            <form action="">
-              <div class="form-item">
-                <label for="username">Имя</label>
-                <input type="text" id="username" value="admin" />
-              </div>
-              <div class="form-item">
-                <label for="email">Почта</label>
-                <input type="email" id="username" value="pochta@gmail.com" />
-              </div>
-              <div class="form-item">
-                <label for="username">Имя</label>
-                <input type="text" id="username" value="Пименов А.Е." />
-              </div>
-              <input type="button" value="Изменить" />
-            </form>
-          </div>
+            <div class="form-item">
+              <label for="email">Почта</label>
+              <input type="email" id="username" value="pochta@gmail.com" />
+            </div>
+            <div class="form-item">
+              <label for="username">Имя</label>
+              <input type="text" id="username" value="Пименов А.Е." />
+            </div>
+            <input type="button" value="Выйти" />
+          </form>
+        </div>
 
-          
 
-          <div class="button-container">
-            <button type="button" onclick="document.location.href='./accountPages/masterTasks.html'">Взять заказ</button>
-          </div>
 
-          <div class="button-container">
-            <button type="button">Админ панель</button>
-          </div>
+        <div class="button-container">
+          <button type="button" onclick="document.location.href='./accountPages/masterTasks.html'">Взять заказ</button>
+        </div>
+
+        <div class="button-container">
+          <button type="button">Админ панель</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="footer-container">
-      <div class="footer">
-        <div class="footer-block">
-          <h2>HandyMan</h2>
-          <ul class="mt-20">
-            <li>Разработал Пименов А.Е.</li>
-            <li>
-              <a href="https://github.com/binido/Course-work">GitHub проекта</a>
-            </li>
-            <li>
-              <span>&copy;</span> 2024 HandyMan. Проект с открытым исходным
-              кодом
-            </li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <h3>Мастера</h3>
-          <ul class="grid-ul">
-            <li><a href="">Сантехники</a></li>
-            <li><a href="">Плотники</a></li>
-            <li><a href="">Электрики</a></li>
-            <li><a href="">Маляры</a></li>
-            <li><a href="">Слесари</a></li>
-            <li><a href="">Столяры</a></li>
-            <li><a href="">Мебельшики</a></li>
-            <li><a href="">Универсальные</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <h3>Навигация</h3>
-          <ul>
-            <li><a href="">Контакты</a></li>
-            <li><a href="">О нас</a></li>
-            <li><a href="">Отзывы</a></li>
-          </ul>
-        </div>
+  <!-- footer -->
+  <div class="footer-container">
+    <div class="footer">
+      <div class="footer-block">
+        <h2>HandyMan</h2>
+        <ul class="mt-20">
+          <li>Разработал Пименов А.Е.</li>
+          <li>Студент КС ПГУТИ</li>
+          <li>Группы 4ИСПВ-1</li>
+          <li>
+            <a href="https://github.com/binido/Course-work">GitHub проекта</a>
+          </li>
+          <li>
+            <span>&copy;</span> 2024 HandyMan. Проект с открытым исходным
+            кодом
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Мастера</h3>
+        <ul class="grid-ul">
+          <li><a href="">Сантехники</a></li>
+          <li><a href="">Плотники</a></li>
+          <li><a href="">Электрики</a></li>
+          <li><a href="">Маляры</a></li>
+          <li><a href="">Слесари</a></li>
+          <li><a href="">Столяры</a></li>
+          <li><a href="">Мебельшики</a></li>
+          <li><a href="">Универсальные</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">О нас</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- footer -->
+</body>
+
 </html>

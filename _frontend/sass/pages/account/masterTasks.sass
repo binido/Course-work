@@ -5,8 +5,15 @@
 
             h1
                 color: $translucent
-                font-size: 24px
                 font-weight: 600
+
+                @media screen and (min-width: 320px)
+                    font-size: 28px
+                    text-align: center
+
+                @media screen and (min-width: 768px)
+                    font-size: 24px
+                    text-align: left
 
             &-block
                 margin-top: 60px
@@ -25,14 +32,22 @@
 
                 &-list>ul
                     display: grid
-                    grid-template-columns: repeat(3, 1fr)
                     gap: 40px
+
+                    @media screen and (min-width: 320px)
+                        grid-template-columns: repeat(1, 1fr)
+
+                    @media screen and (min-width: 768px)
+                        grid-template-columns: repeat(2, 1fr)
+
+                    @media screen and (min-width: 992px)
+                        grid-template-columns: repeat(3, 1fr)
 
                     li
                         @include shadow
                         @include border-radius(5px)
                         padding: 10px
-                        width: 270px
+                        width: 300px
                         display: flex
                         flex-direction: column
                         gap: 15px
@@ -46,5 +61,4 @@
 
                         button
                             @include button(245px, 40px)
-
-                            
+                            align-self: center
