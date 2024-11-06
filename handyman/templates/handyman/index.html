@@ -9,19 +9,19 @@
     <div class="main-container">
         <div class="main">
             <div class="main-slider">
-                <h2>
-                    Handyman - Ваш надежный помощник по вызову мастера на
-                    дом
-                </h2>
+                <h2>Handyman - Ваш надежный помощник по вызову мастера на дом</h2>
                 <div class="slider-block">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            {% for banner in banners %}
-                                <div class="swiper-slide">
-                                    <img src="{% static 'handyman/img/master/portfolioPlaceholder.png' %}" alt=""
-                                         loading="lazy">
-                                </div>
-                            {% endfor %}
+                            <div class="swiper-slide">
+                                <img src="{% static 'handyman/img/master/banner1.png' %}" alt=""/>
+                            </div>
+                           <div class="swiper-slide">
+                                <img src="{% static 'handyman/img/master/banner2.png' %}" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'handyman/img/master/banner3.png' %}" alt=""/>
+                            </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>

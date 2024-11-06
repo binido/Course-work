@@ -23,9 +23,9 @@ def is_user(user):
 
 
 def index(request):
-    banners = Banners.objects.all()
-    data = {"title": "Главная",
-            'banners': banners, }
+    data = {
+        "title": "Главная"
+    }
     return render(request, "handyman/index.html", context=data)
 
 
