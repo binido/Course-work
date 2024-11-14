@@ -1,54 +1,56 @@
-{% extends "base.html" %} {%block content %} 
-{% include "handyman/include/header.html" %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {% include "handyman/include/header.html" %}
 
-<div class="main-container">
-  <div class="main">
-    <div class="contact-block">
-      <div class="contact">
-        <img src="https://placehold.co/200x200" alt="" />
-        <div class="contact-text">
-          <p>Дизайнер</p>
-          <p>Пименов А.Е</p>
-          <p>Почта</p>
-          <p>zename9@gmail.com</p>
-          <p>Номер</p>
-          <p>+7(999)999-99-99</p>
+    <div class="main-container">
+        <div class="main">
+            <div class="contact-block">
+                <div class="contact">
+                    <img src="{% static 'handyman/img/iUADrcYiECY(1).jpg' %}" alt=""/>
+                    <div class="contact-text">
+                        <p>Дизайнер</p>
+                        <p>Пименов А.Е</p>
+                        <p>Почта</p>
+                        <p>zename9@gmail.com</p>
+                        <p>Номер</p>
+                        <p>+7(999)999-99-99</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="{% static 'handyman/img/iUADrcYiECY(1).jpg' %}" alt=""/>
+                    <div class="contact-text">
+                        <p>Разработчик</p>
+                        <p>Пименов А.Е</p>
+                        <p>Почта</p>
+                        <p>zename9@gmail.com</p>
+                        <p>Номер</p>
+                        <p>+7(999)999-99-99</p>
+                    </div>
+                </div>
+                {#                <div class="contact">#}
+                {#                    <img src="https://placehold.co/200x200" alt=""/>#}
+                {#                    <div class="contact-text">#}
+                {#                        <p>Консультант</p>#}
+                {#                        <p>Кулаков И.Г.</p>#}
+                {#                        <p>Почта</p>#}
+                {#                        <p>libertarion@gmail.com</p>#}
+                {#                        <p>Номер</p>#}
+                {#                        <p>+7(999)999-99-99</p>#}
+                {#                    </div>#}
+                {#                </div>#}
+            </div>
+
+            <div class="map-block">
+                <iframe
+                        title="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d752.2588451010417!2d50.19506711226799!3d53.230884213450466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x416619357e1cd9d1%3A0x51414a8913a79ea5!2z0JzQvtGB0LrQvtCy0YHQutC-0LUg0YguLCAxMjAsINCh0LDQvNCw0YDQsCwg0KHQsNC80LDRgNGB0LrQsNGPINC-0LHQuy4sIDQ0MzAxMQ!5e0!3m2!1sru!2sru!4v1728913339915!5m2!1sru!2sru"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+                <p>Московское ш., 120, Самара, Самарская обл., 443011</p>
+            </div>
         </div>
-      </div>
-      <div class="contact">
-        <img src="https://placehold.co/200x200" alt="" />
-        <div class="contact-text">
-          <p>Разработчик</p>
-          <p>Пименов А.Е</p>
-          <p>Почта</p>
-          <p>zename9@gmail.com</p>
-          <p>Номер</p>
-          <p>+7(999)999-99-99</p>
-        </div>
-      </div>
-        <div class="contact">
-        <img src="https://placehold.co/200x200" alt="" />
-        <div class="contact-text">
-          <p>Консультант</p>
-          <p>Кулаков И.Г.</p>
-          <p>Почта</p>
-          <p>libertarion@gmail.com</p>
-          <p>Номер</p>
-          <p>+7(999)999-99-99</p>
-        </div>
-      </div>
     </div>
 
-    <div class="map-block">
-      <iframe
-        title="map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d752.2588451010417!2d50.19506711226799!3d53.230884213450466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x416619357e1cd9d1%3A0x51414a8913a79ea5!2z0JzQvtGB0LrQvtCy0YHQutC-0LUg0YguLCAxMjAsINCh0LDQvNCw0YDQsCwg0KHQsNC80LDRgNGB0LrQsNGPINC-0LHQuy4sIDQ0MzAxMQ!5e0!3m2!1sru!2sru!4v1728913339915!5m2!1sru!2sru"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-      <p>Московское ш., 120, Самара, Самарская обл., 443011</p>
-    </div>
-  </div>
-</div>
-
-{% include "handyman/include/footer.html" %} {% endblock content %}
+    {% include "handyman/include/footer.html" %} {% endblock content %}
